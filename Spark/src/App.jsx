@@ -1,12 +1,16 @@
 import './App.css'
-
+import Footer from './Components/Footer'
+import { BrowserRouter, Routes, Route,  Link} from "react-router-dom";
 function App() {
  
   return (
     <>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <BrowserRouter>
+    <Routes>
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
+     
     </>
   )
 }
