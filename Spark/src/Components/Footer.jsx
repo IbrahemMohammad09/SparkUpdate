@@ -4,51 +4,50 @@ import { FaFacebookF , FaWhatsapp , FaLinkedinIn} from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 export default function Footer(){
     return<>
-   <div className="bg-[#2fb0cd] py-6">
-   <div className="flex flex-col items-center justify-around  md:flex-row  md:items-start  ">
-    <Link to ="/" className="flex items-center mb-4">
-        <img src={logo} alt="Logo" className="w-16"/>
-        <p className="text-2xl font-normal pl-3 cursor-pointer">SPARK</p>
-    </Link>
+    <div className="bg-[#2fb0cd] py-6">
+        <div className="flex flex-col items-center justify-around  md:flex-row  md:items-start  ">
+            <Link to ="/" className="flex items-center mb-4">
+                <img src={logo} alt="Logo" className="w-16"/>
+                <p className="text-2xl font-normal pl-3 cursor-pointer">SPARK</p>
+            </Link>
 
-    <div className="flex gap-8 text-base">
-        <div className="flex flex-col">
-            <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal ">About Us</Link>
-            <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Contact Us</Link>
+            <div className="flex gap-8 text-base">
+                <div className="flex flex-col">
+                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal ">About Us</Link>
+                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Contact Us</Link>
+                </div>
+                <div className="flex  flex-col">
+                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Services</Link>
+                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Team</Link>
+                </div>
+                <div className="flex flex-col">
+                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Projects</Link>
+                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal">Our App</Link>
+                </div>
+            </div>
         </div>
-        <div className="flex  flex-col">
-            <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Services</Link>
-            <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Team</Link>
-        </div>
-        <div className="flex flex-col">
-            <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Projects</Link>
-            <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal">Our App</Link>
+
+        {/* Social Icons */}
+        <div className="flex flex-col items-center gap-4 md:flex-row md:justify-around md:items-center md:pr-24 mt-4">
+            <div className="flex gap-4 order-1 md:order-2 ">
+                <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#1877f2]">
+                    <FaFacebookF />
+                </a>
+            
+                <a href="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#c32aa3]">
+                    <FaInstagram />
+                </a> 
+                <a href="https://wa.me/+963962272881" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#25d366]">
+                    <FaWhatsapp />
+                </a>
+                <a href="https://www.linkedin.com/company/spark-engineering-company/" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#0a66c2]">
+                    <FaLinkedinIn />
+                </a> 
+            </div>
+            <p className="order-2 md:order-1 text-base font-normal text-[#212529] text-center">
+                Copyright ® 2024 Company All rights reserved
+            </p>
         </div>
     </div>
-</div>
-
-{/* Social Icons */}
-<div className="flex flex-col items-center gap-4 md:flex-row md:justify-around md:items-center md:pr-24 mt-4">
-  <div className="flex gap-4 order-1 md:order-2 ">
-  <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#1877f2]">
-      <FaFacebookF />
-  </a>
-   
-    <a href="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#c32aa3]">
-        <FaInstagram />
-    </a> 
-    <a href="https://wa.me/+963962272881" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#25d366]">
-        <FaWhatsapp />
-    </a>
-    <a href="https://www.linkedin.com/company/spark-engineering-company/" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#0a66c2]">
-        <FaLinkedinIn />
-    </a> 
-  </div>
-  <p className="order-2 md:order-1 text-base font-normal text-[#212529] text-center">
-      Copyright ® 2024 Company All rights reserved
-  </p>
-</div>
-
-   </div>
     </>
 }

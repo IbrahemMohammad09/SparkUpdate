@@ -6,9 +6,9 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Routes>
-    </Routes>
-    <Footer/>
+      <Routes>
+      </Routes>
+      <Footer/>
     </BrowserRouter>
      
     </>
