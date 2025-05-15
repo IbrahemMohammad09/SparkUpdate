@@ -5,12 +5,11 @@ function App() {
  
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
-     
+      <BrowserRouter>
+        <Routes>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
     </>
   )
 }
