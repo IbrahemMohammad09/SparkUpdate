@@ -13,36 +13,36 @@ export default function Footer(){
 
             <div className="flex gap-8 text-base">
                 <div className="flex flex-col">
-                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal ">About Us</Link>
-                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Contact Us</Link>
+                    <Link to ="" className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal ">About Us</Link>
+                    <Link to ="" className="hover:text-white  transition-transform duration-300 cursor-pointer text-lg font-normal" >Contact Us</Link>
                 </div>
                 <div className="flex  flex-col">
-                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Services</Link>
-                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Team</Link>
+                    <Link to ="" className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal" >Our Services</Link>
+                    <Link to ="" className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal" >Our Team</Link>
                 </div>
                 <div className="flex flex-col">
-                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal" >Our Projects</Link>
-                    <Link to ="" className="hover:text-white  cursor-pointer text-lg font-normal">Our App</Link>
+                    <Link to ="" className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal" >Our Projects</Link>
+                    <Link to ="" className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal">Our App</Link>
                 </div>
             </div>
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-col items-center gap-4 md:flex-row md:justify-around md:items-center md:pr-24 mt-4">
+        <div className="flex flex-col items-center gap-4 md:flex-row md:justify-around md:items-center md:pr-24 mt-6">
             <div className="flex gap-4 order-1 md:order-2 ">
-                <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#1877f2]">
+                <Link to ="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL" className="bg-black text-white rounded-full p-2 flex items-center justify-center transition-transform duration-300 hover:bg-[#1877f2]">
                     <FaFacebookF />
-                </a>
+                </Link>
             
-                <a href="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#c32aa3]">
+                <Link to="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3" className="bg-black text-white rounded-full p-2 flex items-center justify-center transition-transform duration-300 hover:bg-[#c32aa3]">
                     <FaInstagram />
-                </a> 
-                <a href="https://wa.me/+963962272881" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#25d366]">
+                </Link> 
+                <Link href="https://wa.me/+963962272881" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#25d366]">
                     <FaWhatsapp />
-                </a>
-                <a href="https://www.linkedin.com/company/spark-engineering-company/" className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#0a66c2]">
+                </Link>
+                <Link to="https://www.linkedin.com/company/spark-engineering-company/" className="bg-black text-white rounded-full p-2 flex items-center justify-center transition-transform duration-300 hover:bg-[#0a66c2]">
                     <FaLinkedinIn />
-                </a> 
+                </Link> 
             </div>
             <p className="order-2 md:order-1 text-base font-normal text-[#212529] text-center">
                 Copyright ® 2024 Company All rights reserved
