@@ -17,13 +17,13 @@ export default function Footer() {
           <div className="flex gap-8 text-base">
             <div className="flex flex-col">
               <Link
-                to=""
+                to="/about_us"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal "
               >
                 About Us
               </Link>
               <Link
-                to=""
+                to="/contact_us"
                 className="hover:text-white  transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Contact Us
@@ -31,13 +31,13 @@ export default function Footer() {
             </div>
             <div className="flex  flex-col">
               <Link
-                to=""
+                to="our_services"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Our Services
               </Link>
               <Link
-                to=""
+                to="our_team"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Our Team
@@ -45,13 +45,13 @@ export default function Footer() {
             </div>
             <div className="flex flex-col">
               <Link
-                to=""
+                to="/our_projects"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Our Projects
               </Link>
               <Link
-                to=""
+                to="/our_app"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Our App
@@ -77,7 +77,7 @@ export default function Footer() {
               <FaInstagram />
             </Link>
             <Link
-              href="https://wa.me/+963962272881"
+              to="https://wa.me/+963962272881"
               className="bg-black text-white rounded-full p-2 flex items-center justify-center hover:bg-[#25d366]"
             >
               <FaWhatsapp />
