@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
@@ -27,10 +26,10 @@ export default function AboutUs() {
   return (
     <div className="overflow-hidden"> 
       <motion.div
-        className="flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-between px-10 py-8"
+        className="flex flex-col-reverse items-center justify-center lg:items-start lg:flex-row lg:justify-center px-7 py-11 "
         variants={fadeInBottom} initial="initial" animate="animate">
-        <div className="max-w-[790px]">
-          <p className="text-[#165069] text-center md:text-start text-4xl font-semibold mb-6">
+        <div className="max-w-[790px] text-center md:text-start lg:mt-28">
+          <p className="text-[#165069]  text-4xl font-semibold mb-6">
             About us
           </p>
           <p className="text-[#0d0d0db2] text-2xl font-normal leading-9">
@@ -41,10 +40,11 @@ export default function AboutUs() {
           </p>
         </div>
         <div className="flex flex-col items-center gap-4.5 text-[#165069]">
-          <img src={About} alt="Logo" className="w-80" />
+          <img src={About} alt="Logo" className="w-[370px] h-[305px]  object-contain " />
           <p className="text-5xl font-normal pt-4">SPARK</p>
           <p className="text-xl font-medium">Engineering Company</p>
           <hr className="text-[#16506980] w-full" />
+          {/*Social Icons */}
           <div className="flex gap-8 mb-14 mt-4">
             <Link to="https://www.facebook.com/profile.php?id=61553751250143">
               <FaFacebookF className="text-4xl transition-transform duration-300 hover:scale-110" />

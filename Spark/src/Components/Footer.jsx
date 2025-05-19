@@ -2,6 +2,7 @@ import logo from "../assets/image/logo.webp";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+
 export default function Footer() {
   return (
     <>
@@ -11,6 +12,7 @@ export default function Footer() {
             <img src={logo} alt="Logo" className="w-16" />
             <p className="text-2xl font-normal pl-3 cursor-pointer">SPARK</p>
           </Link>
+
 
           <div className="flex gap-8 text-base">
             <div className="flex flex-col">
