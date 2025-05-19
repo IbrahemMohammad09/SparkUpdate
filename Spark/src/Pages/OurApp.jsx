@@ -8,7 +8,7 @@ const OurApp = () => {
     <div className="flex flex-col-reverse md:flex-row items-center justify-between min-h-screen bg-gradient-to-br from-blue-50 to-white p-6 md:px-12 lg:px-24 xl:px-32 py-12 md:py-24">
       <div className="flex flex-col items-start text-left w-full md:w-1/2 max-w-2xl mx-auto mt-8 md:mt-0 md:mr-12 lg:mr-16">
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 md:mb-8 leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-gray-900 mb-6 md:mb-8 leading-tight"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

@@ -27,9 +27,9 @@ const ContactUs = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center mt-40">
+      <div className="relative z-20 flex flex-col items-center mt-20">
         <motion.h2
-          className="text-4xl lg:text-7xl font-bold text-white mb-10 drop-shadow-lg"
+          className="text-4xl lg:text-7xl t font-normal  text-white mb-10 drop-shadow-lg"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
@@ -49,10 +49,10 @@ const ContactUs = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">
+            <h3 className="text-[#165069]  text-4xl font-semibold mb-3">
               We're Here to Help!
             </h3>
-            <p className="text-gray-600">
+            <p className="text-[#0d0d0db2] text-xl  font-normal">
               Have questions or need support? Our team is always ready to assist
               you. Feel free to reach out via email or phone, and we'll be happy
               to respond to your inquiry as soon as possible.

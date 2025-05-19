@@ -28,11 +28,11 @@ export default function AboutUs() {
       <motion.div
         className="flex flex-col-reverse items-center justify-center lg:items-start lg:flex-row lg:justify-center px-7 py-11 "
         variants={fadeInBottom} initial="initial" animate="animate">
-        <div className="max-w-[790px] text-center md:text-start lg:mt-28">
+        <div className="flex flex-col items-center max-w-[790px] text-center md:text-start lg:mt-28">
           <p className="text-[#165069]  text-4xl font-semibold mb-6">
             About us
           </p>
-          <p className="text-[#0d0d0db2] text-2xl font-normal leading-9">
+          <p className="text-[#0d0d0db2] text-2xl  font-normal leading-9 text-center">
             At Spark Company, we're passionate about helping businesses like yours thrive in the digital 
             landscape. Our team of experts offers a range of services, from web development and UI/UX design
             to marketing and branding. Whether you're looking to revamp your online presence or launch a new
