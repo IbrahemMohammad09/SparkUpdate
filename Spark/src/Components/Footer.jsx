@@ -4,7 +4,7 @@ import { FaFacebookF , FaWhatsapp , FaLinkedinIn} from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 export default function Footer(){
     return<>
-    <div className="bg-[#2fb0cd] py-6">
+    <div className="bg-[#2fb0cd] py-6 ">
         <div className="flex flex-col items-center justify-around  md:flex-row  md:items-start  ">
             <Link to ="/" className="flex items-center mb-4">
                 <img src={logo} alt="Logo" className="w-16"/>
