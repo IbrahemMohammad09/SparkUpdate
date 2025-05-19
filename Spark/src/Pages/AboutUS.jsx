@@ -4,6 +4,7 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import About from "../assets/image/AboutUs/About.png";
+import MainTitle from '../Components/MainTitle';
 const fadeInBottom = {
   initial: {
     y: 50,   
@@ -23,6 +24,7 @@ const fadeInBottom = {
 };
 
 export default function AboutUs() {
+  MainTitle("About Us");
   return (
     <div className="overflow-hidden"> 
       <motion.div

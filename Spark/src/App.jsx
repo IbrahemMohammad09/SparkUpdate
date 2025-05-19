@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
-
 function App() {
   return (
     <>

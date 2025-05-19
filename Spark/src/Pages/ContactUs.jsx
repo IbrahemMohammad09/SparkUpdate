@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone } from "react-icons/fi";
 import HeroSection from "../assets/image/ContactUs/ContactUs Photo.png";
+import { div } from "framer-motion/client";
+import MainTitle from "../Components/MainTitle";
 
 const ContactUs = () => {
   const animationProps = {
@@ -9,7 +11,7 @@ const ContactUs = () => {
     animate: { scale: 1, y: 0 },
     transition: { duration: 3, ease: "easeOut" },
   };
-
+  MainTitle("Contact Us");
   return (
     <div className="flex items-center justify-center relative overflow-hidden py-10 min-h-[calc(100vh-80px)]">
       {/* Background Image */}
@@ -76,6 +78,8 @@ const ContactUs = () => {
         </motion.div>
       </div>
     </div>
+   
+    
   );
 };
 
