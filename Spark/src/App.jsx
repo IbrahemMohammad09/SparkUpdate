@@ -4,8 +4,9 @@ const NavigationBar = React.lazy(() => import("./Components/NavigationBar"));
 const Footer = React.lazy(() => import("./Components/Footer"));
 const OurApp = React.lazy(() => import("./Pages/OurApp"));
 const AboutUs = React.lazy(() => import("./Pages/AboutUS"));
+const ErrorPage = React.lazy(() => import("./Pages/ErrorPage/ErrorPage"));
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Navigate, Route, Link } from "react-router-dom";
 import LoadingPage from "./Pages/LoadingPage";
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
@@ -22,6 +23,8 @@ function App() {
           <Route path={"/our_app"} element={<OurApp />} />
           <Route path={"/our_team"} element={<OurTeam />} />
           <Route path={"/loading"} element={<LoadingPage />} />
+          <Route path="*" element={<Navigate to={"/error-page"} />} />
+          <Route path="/error-page" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
