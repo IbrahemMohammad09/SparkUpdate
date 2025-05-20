@@ -21,7 +21,7 @@ function App() {
           <Route path={"/contact_us"} element={<ContactUs />} />
           <Route path={"/our_app"} element={<OurApp />} />
           <Route path={"/our_team"} element={<OurTeam />} />
-          <Route path={"/l"} element={<LoadingPage />} />
+          <Route path={"/loading"} element={<LoadingPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
