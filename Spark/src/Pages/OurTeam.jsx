@@ -35,7 +35,7 @@ export default function OurTeam() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="z-10 text-3xl md:text-5xl font-bold text-center mt-10"
+        className="z-10 text-3xl md:text-5xl font-normal text-center mt-10"
       >
         Meet Our Team of <span className="text-[#1a92ce]">Creative</span>{" "}
         Experts
@@ -92,7 +92,7 @@ export default function OurTeam() {
                   className="w-full h-3/5 object-cover"
                 />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold">{currentMember.name}</h3>
+                  <h3 className="text-xl font-normal">{currentMember.name}</h3>
                   <p className="text-gray-600 font-normal">
                     {currentMember.position}
                   </p>
@@ -122,7 +122,7 @@ export default function OurTeam() {
                         className="w-3/4 h-0.5 bg-[#1a92ce] mb-4 origin-left"
                       ></motion.div>
 
-                      <div className="text-center text-lg font-medium max-w-xs">
+                      <div className="text-center text-lg font-normal max-w-xs">
                         {bioWords.map((word, index) => (
                           <motion.span
                             key={index}
