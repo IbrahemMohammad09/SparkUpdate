@@ -6,7 +6,7 @@ const OurApp = React.lazy(() => import("./Pages/OurApp"));
 const AboutUs = React.lazy(() => import("./Pages/AboutUS"));
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
+import LoadingPage from "./Pages/LoadingPage";
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
 const OurTeam = React.lazy(() => import("./Pages/OurTeam"));
@@ -21,6 +21,7 @@ function App() {
           <Route path={"/contact_us"} element={<ContactUs />} />
           <Route path={"/our_app"} element={<OurApp />} />
           <Route path={"/our_team"} element={<OurTeam />} />
+          <Route path={"/l"} element={<LoadingPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
