@@ -10,7 +10,7 @@ const links = [
   { name: "Our Project", to: "/projects" },
   { name: "Our App", to: "/our_app" },
   { name: "Contact US", to: "/contact_us" },
-  { name: "Our Team", to: "/team" },
+  { name: "Our Team", to: "/our_team" },
   { name: "About Us", to: "/about_us" },
 ];
 
