@@ -36,7 +36,7 @@ const OurApp = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <motion.a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.sparkengdev.app&pli=1"
             className="flex items-center justify-center gap-2 bg-[#1a92ce] hover:bg-[#165069] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl transition-all shadow-md hover:shadow-lg text-base sm:text-lg font-medium"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
@@ -46,7 +46,7 @@ const OurApp = () => {
           </motion.a>
 
           <motion.a
-            href="#"
+            href="https://apps.apple.com/de/app/spark-company/id6667110509?l=en-GB"
             className="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl transition-all shadow-md hover:shadow-lg text-base sm:text-lg font-medium"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
