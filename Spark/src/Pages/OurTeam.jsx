@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import teamData from "../Utils/TeamData";
+import Team_bg from "../assets/image/OurTeam/team-bg.png";
 
 export default function OurTeam() {
   const [current, setCurrent] = useState(0);
@@ -23,7 +24,7 @@ export default function OurTeam() {
     <div
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-white"
       style={{
-        backgroundImage: `url(${currentMember.image})`,
+        backgroundImage: `url(${Team_bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -34,7 +35,7 @@ export default function OurTeam() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="z-10 text-3xl md:text-5xl font-bold text-center mt-10"
+        className="z-10 text-3xl md:text-5xl font-normal text-center mt-10"
       >
         Meet Our Team of <span className="text-[#1a92ce]">Creative</span>{" "}
         Experts
@@ -50,10 +51,25 @@ export default function OurTeam() {
         top-notch solutions and exceeding expectations.
       </motion.p>
 
-      <div className="z-10 flex items-center gap-4 mt-12 px-4 w-full justify-center">
+      <div className="z-10 flex md:hidden items-center gap-8 mt-8">
         <button
           onClick={handlePrev}
-          className="text-3xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_15px_#1a92ce]"
+          className="text-2xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_10px_#1a92ce]"
+        >
+          <FaArrowLeft />
+        </button>
+        <button
+          onClick={handleNext}
+          className="text-2xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_10px_#1a92ce]"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
+
+      <div className="z-10 flex items-center gap-4 mt-8 md:mt-12 px-4 w-full justify-center">
+        <button
+          onClick={handlePrev}
+          className="hidden md:block text-3xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_15px_#1a92ce]"
         >
           <FaArrowLeft />
         </button>
@@ -76,7 +92,7 @@ export default function OurTeam() {
                   className="w-full h-3/5 object-cover"
                 />
                 <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold">{currentMember.name}</h3>
+                  <h3 className="text-xl font-normal">{currentMember.name}</h3>
                   <p className="text-gray-600 font-normal">
                     {currentMember.position}
                   </p>
@@ -90,7 +106,6 @@ export default function OurTeam() {
                   <p className="text-[#1a92ce] mt-2">Click me</p>
                 </div>
 
-                {/* Overlay Bio without card flip */}
                 <AnimatePresence>
                   {activeOverlay && (
                     <motion.div
@@ -107,7 +122,7 @@ export default function OurTeam() {
                         className="w-3/4 h-0.5 bg-[#1a92ce] mb-4 origin-left"
                       ></motion.div>
 
-                      <div className="text-center text-lg font-medium max-w-xs">
+                      <div className="text-center text-lg font-normal max-w-xs">
                         {bioWords.map((word, index) => (
                           <motion.span
                             key={index}
@@ -137,7 +152,7 @@ export default function OurTeam() {
 
         <button
           onClick={handleNext}
-          className="text-3xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_15px_#1a92ce]"
+          className="hidden md:block text-3xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_15px_#1a92ce]"
         >
           <FaArrowRight />
         </button>
