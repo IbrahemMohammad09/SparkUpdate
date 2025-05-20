@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import teamData from "../Utils/TeamData";
 import Team_bg from "../assets/image/OurTeam/team-bg.png";
-
+import MainTitle from "../Components/MainTitle"
 export default function OurTeam() {
+  MainTitle("Our Team");
   const [current, setCurrent] = useState(0);
   const [activeOverlay, setActiveOverlay] = useState(false);
 
