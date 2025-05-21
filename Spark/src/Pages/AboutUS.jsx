@@ -31,7 +31,7 @@ export default function AboutUs() {
         className="flex flex-col-reverse items-center justify-center lg:items-start lg:flex-row lg:justify-center px-7 py-11 "
         variants={fadeInBottom} initial="initial" animate="animate">
         <div className="flex flex-col items-center max-w-[790px] text-center md:text-start lg:mt-28">
-          <p className="text-[#165069]  text-4xl font-semibold mb-6">
+          <p className="text-[#1a92ce]  text-4xl font-semibold mb-6">
             About us
           </p>
           <p className="text-[#0d0d0db2] text-2xl  font-normal leading-9 text-center">
