@@ -163,7 +163,7 @@ export default function ErrorPage() {
         <h1 className="mt-8 text-9xl font-bold text-[#1a92ce] glitch-effect">
           404
         </h1>
-        =
+        
         <p className="mt-4 text-2xl text-center text-[#1a92ce] animate-pulse">
           {currentMessage}
         </p>
