@@ -1,0 +1,14 @@
+.conic-gradient-box {
+    background: conic-gradient(
+      from 0deg,
+      #2fb0cd 0%,
+      #d1d5db 40%,
+      #f0f0f0 60%,
+      #2fb0cd 100%
+    );
+    border: 2px solid #ccc;
+  }
+  .blurred-bg {
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
+    filter: blur(2px);
+  }

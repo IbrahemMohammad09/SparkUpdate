@@ -8,7 +8,9 @@ const OurApp = React.lazy(() => import("./Pages/OurApp"));
 const AboutUs = React.lazy(() => import("./Pages/AboutUS"));
 
 const ErrorPage = React.lazy(() => import("./Pages/ErrorPage/ErrorPage"));
+const RequestSuccess = React.lazy(() => import("./Pages/SuccessPage/RequestSuccess"));
 
+import Spinner from "./Components/Spinner";
 import { BrowserRouter, Routes, Navigate, Route, Link } from "react-router-dom";
 import LoadingPage from "./Pages/LoadingPage";
 
@@ -30,6 +32,8 @@ function App() {
           <Route path={"/loading"} element={<LoadingPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/error-page" element={<ErrorPage />} />
+          <Route path="/g" element={<RequestSuccess />} />
+          <Route path="/s" element={<Spinner/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
