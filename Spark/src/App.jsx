@@ -32,7 +32,7 @@ function App() {
           <Route path={"/loading"} element={<LoadingPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/error-page" element={<ErrorPage />} />
-          <Route path="/g" element={<RequestSuccess />} />
+          <Route path="/rquest-success" element={<RequestSuccess />} />
           <Route path="/s" element={<Spinner/>} />
         </Routes>
         <Footer />
