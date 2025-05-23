@@ -42,7 +42,7 @@ export default function TopServices() {
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               >
                 <img src={service.img} alt={service.title} className="w-52 h-32" />
                 <div className="flex flex-col p-4">
