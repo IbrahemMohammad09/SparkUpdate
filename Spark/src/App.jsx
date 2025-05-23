@@ -13,7 +13,7 @@ const RequestSuccess = React.lazy(() => import("./Pages/SuccessPage/RequestSucce
 import Spinner from "./Components/Spinner";
 import { BrowserRouter, Routes, Navigate, Route, Link } from "react-router-dom";
 import LoadingPage from "./Pages/LoadingPage";
-
+import TopServices from "./Sections/TopServices";
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
 const OurTeam = React.lazy(() => import("./Pages/OurTeam"));
@@ -33,7 +33,8 @@ function App() {
           <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="/rquest-success" element={<RequestSuccess />} />
-          <Route path="/s" element={<Spinner/>} />
+          <Route path="/spinner" element={<Spinner/>} />
+          <Route path="/top-services" element={<TopServices/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
