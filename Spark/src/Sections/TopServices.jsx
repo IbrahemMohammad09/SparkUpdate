@@ -39,7 +39,7 @@ export default function TopServices() {
     <>
       <div className="my-20 p-9 md:px-16  bg-gradient rounded-2xl mx-2  "
     >
-      <p className=" text-lg">01 | Top Services</p>
+      {/* <p className=" text-lg">01 | Top Services</p> */}
         <div className="flex flex-col  justify-center items-center lg:flex-row lg:justify-between my-4 container-card">
         <p className="text-2xl md:text-5xl text-center text-white">Our Top Services Include</p>
         <p className="text-[#0000009e] text-xl   lg:max-w-[530px] my-5  text-center ">
@@ -47,12 +47,12 @@ export default function TopServices() {
            and immersive <span className="text-white">digital experiences </span> that captivate audiences.
         </p>
         </div>
-        <div className="mt-2 lg:mt-16 md:p-4 rounded-2xl">
+        <div className="mt-2 lg:mt-4 md:p-4 rounded-2xl">
           <div className="flex flex-col justify-center items-center lg:flex-row gap-8 mt-6 container-card">
             {Topservices.map((topservices, index) => (
               <motion.div
                 key={index}
-                className=" flex flex-col  items-start w-72 md:w-96 h-72 rounded-2xl p-6 md:p-8 bg-[#f1f6f9] hover:scale-105 transition-all cursor-pointer"
+                className=" flex flex-col  items-start w-72 md:w-82 h-72 rounded-2xl p-6 md:p-8 bg-[#f1f6f9] hover:scale-105 transition-all cursor-pointer"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.4 }}
