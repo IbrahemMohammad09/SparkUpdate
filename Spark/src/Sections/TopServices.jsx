@@ -1,58 +1,79 @@
 import Services1 from "../assets/image/OurServices/Services1.webp";
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; 
+import { FaCheck } from "react-icons/fa6";
+import "./TopServices.css"
 export default function TopServices() {
   const Topservices = [
     {
       title: "Company Services",
       url: "/company-services",
       img: Services1,
-      maxWidth: 500,
+      text1:"Social media content ",
+      text2:"Website Design",
+      text3:"UI/UX Solution",
     },
     {
       title: "Student Services",
-      url: "/student-services",
       img: Services1,
-      maxWidth: 550,
+      text1:"Social media content ",
+      text2:"Website Design",
+      text3:"UI/UX Solution",
     },
     {
       title: "Free Codes",
-      url: "/free-codes",
       img: Services1,
-      maxWidth: 600,
+      text1:"Social media content ",
+      text2:"Website Design",
+      text3:"UI/UX Solution",
     },
+    {
+      title: "SCRS",
+      img: Services1,
+      text1:"Social media content ",
+      text2:"Website Design",
+      text3:"UI/UX Solution",
+    }
   ];
 
   return (
     <>
-      <div className="my-20">
-        <p className="text-5xl md:text-6xl text-center">Our Top Services</p>
-        <p className="text-[#0000009e] text-sm md:text-lg text-center my-4 max-w-[768px] px-3 m-auto">
-          At our company, we pride ourselves on offering top-notch service that utilizes cutting-edge technology.
-          Our team is dedicated to staying ahead of the curve and providing our clients with the most advanced and
-          innovative solutions available.
+      <div className="my-20 p-9 md:px-16  bg-gradient rounded-2xl mx-2  "
+    >
+      <p className=" text-lg">01 | Top Services</p>
+        <div className="flex flex-col  justify-center items-center lg:flex-row lg:justify-between my-4 container-card">
+        <p className="text-2xl md:text-5xl text-center text-white">Our Top Services Include</p>
+        <p className="text-[#0000009e] text-xl   lg:max-w-[530px] my-5  text-center ">
+          We are dedicated to <span className="text-white">crafting</span> compelling brand <span className="text-white">identities</span> , stunning <span className="text-white">visuals </span>,
+           and immersive <span className="text-white">digital experiences </span> that captivate audiences.
         </p>
-        <div className="bg-[#2c90a7] m-4 md:m-16 p-4 md:p-8 rounded-2xl">
-          <div className="flex flex-col justify-start items-start gap-8 mt-12">
-            {Topservices.map((service, index) => (
+        </div>
+        <div className="mt-2 lg:mt-16 md:p-4 rounded-2xl">
+          <div className="flex flex-col justify-center items-center lg:flex-row gap-8 mt-6 container-card">
+            {Topservices.map((topservices, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl p-6 bg-[#f1f6f9] md:p-8 flex flex-col md:flex-row items-center  w-full hover:scale-105 transition-all cursor-pointer"
-                style={{ maxWidth: `${service.maxWidth}px` }}
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className=" flex flex-col  items-start w-72 md:w-96 h-72 rounded-2xl p-6 md:p-8 bg-[#f1f6f9] hover:scale-105 transition-all cursor-pointer"
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.4 }}
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <img src={service.img} alt={service.title} className="w-52 h-32" />
+                <img src={topservices.img} alt={topservices.title} className="w-24" />
                 <div className="flex flex-col p-4">
-                  <h1 className="text-2xl  text-[#212529] ">{service.title}</h1>
-                  <Link
-                    to={service.url}
-                    className="mt-4 font-medium text-base w-48 text-center md:text-lg inline-block bg-[#2fb0cd] py-3 md:py-4 px-8 md:px-12 rounded-lg hover:shadow-xl transition-all"
-                  >
-                    View More
-                  </Link>
+                  <h1 className="text-xl font-semibold text-[#212529] ">{topservices.title}</h1>
+                  <div className="flex gap-1.5 items-start mt-1">
+                  <FaCheck  className="text-[#2fb0cd] text-xl"/>
+                  <p className="text-base"> {topservices.text1}</p>
+                  </div>
+                  <div className="flex gap-1.5 items-start mt-1">
+                  <FaCheck  className="text-[#2fb0cd] text-xl "/>
+                  <p> {topservices.text2}</p>
+                  </div>
+                  <div className="flex gap-1.5 items-start mt-1">
+                  <FaCheck   className="text-[#2fb0cd] text-xl"/>
+                  <p> {topservices.text3}</p>
+                  </div>
+                  
                 </div>
               </motion.div>
             ))}
