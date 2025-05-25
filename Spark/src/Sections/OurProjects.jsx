@@ -48,33 +48,6 @@ const OurProjects = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <nav className="fixed top-0 w-full bg-white shadow-sm z-50">
-        <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2 }}
-            className="text-2xl font-bold text-gray-800"
-          >
-            ARCHITECH
-          </motion.h1>
-
-          <div className="hidden md:flex space-x-8">
-            {["Projects", "Services", "About Us", "Blog"].map((item, index) => (
-              <motion.a
-                key={item}
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.2 + 0.5, duration: 0.6 }}
-                className="text-gray-600 hover:text-gray-900 cursor-pointer"
-              >
-                {item}
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
       <main className="container mx-auto px-4 md:px-8 pt-24 pb-16 text-center">
         <motion.h2
           {...animationConfig}
