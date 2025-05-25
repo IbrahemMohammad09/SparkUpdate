@@ -1,161 +1,167 @@
 import { motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowRight, FiSmartphone, FiGlobe } from "react-icons/fi";
 import image1 from "../assets/image/OurProjects/1.jpg";
 import image2 from "../assets/image/OurProjects/2.png";
-import { Link } from "react-router-dom";
+import bgImage from "../assets/image/OurProjects/Bg.png";
 
 const OurProjects = () => {
   const projects = [
     {
-      id: 1,
-      title: "House Build",
-      type: "Web Application",
-      location: "Sremeka Mitrovica",
-      description: "Modern architectural solution for residential complexes",
+      title: "E-commerce Platform",
+      type: "Web",
+      description: "Modern online shopping solution with AI ",
       image: image1,
     },
     {
-      id: 2,
-      title: "Exterior Design",
-      type: "Mobile App",
-      location: "Novi Sad",
-      description: "3D visualization tool for exterior design projects",
+      title: "Fitness App",
+      type: "Mobile",
+      description: "Personalized workout and nutrition tracking application",
       image: image2,
     },
     {
-      id: 3,
-      title: "Interior Design",
-      type: "Web Platform",
-      location: "Beograd",
-      description: "Interactive interior design configurator with AR support",
+      title: "Dashboard Analytics",
+      type: "Web",
+      description: "Real-time business intelligence dashboard",
       image: image1,
-    },
-    {
-      id: 4,
-      title: "Decoration",
-      type: "Mobile App",
-      location: "Subotica",
-      description: "AI-powered decoration assistant with real-time preview",
-      image: image2,
     },
   ];
 
-  const animationConfig = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: "easeOut" },
-  };
+  const primaryColor = "#1a92ce";
+  const primaryHover = "#1476a3";
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <main className="container mx-auto px-4 md:px-8 pt-24 pb-16 text-center">
-        <motion.h2
-          {...animationConfig}
-          className="text-4xl md:text-6xl font-bold mb-4 text-[#1a92ce]"
+    <section className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
+      <motion.div
+        initial={{ scale: 0.2, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 0.2 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.2,
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          OUR PROJECTS
-        </motion.h2>
-        <motion.p
-          {...animationConfig}
-          className="text-gray-600 max-w-2xl mx-auto mb-12"
-        >
-          Explore our latest projects showcasing innovative design solutions
-          across architecture, interior, and exterior visualizations.
-        </motion.p>
+          <h2
+            className="text-4xl font-bold mb-4"
+            style={{ color: primaryColor }}
+          >
+            OurProjects
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Explore our innovative solutions that transform ideas into digital
+            reality
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.95 }}
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-              transition={{
-                delay: index * 0.3,
-                duration: 0.8,
-                ease: [0.16, 0.77, 0.47, 0.97],
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -10 }}
+              className="bg-gray-50 rounded-xl p-8 cursor-pointer group transition-all duration-300 hover:shadow-[0_10px_40px_-15px_rgba(26,146,206,0.3)] relative"
+              style={{
+                boxShadow: `0 4px 6px -1px ${primaryColor}10`,
+                border: `1px solid ${primaryColor}10`,
               }}
-              className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <div className="w-full h-full relative">
+              <div className="relative h-80 rounded-lg overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
-                  width={600}
-                  height={400}
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                 />
-                <motion.div
-                  className="absolute inset-0 bg-black/40"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                />
-                <motion.div
-                  className="absolute inset-0 backdrop-blur-sm flex items-center justify-center p-4"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileHover={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 20,
-                    mass: 0.5,
-                  }}
-                >
-                  <p className="text-sm text-gray-200 text-center">
-                    {project.description}
-                  </p>
-                </motion.div>
               </div>
 
-              <motion.span
-                className="absolute top-6 left-6 text-6xl font-bold opacity-50 text-white "
-                initial={{ x: -20 }}
-                animate={{ x: 0 }}
-                transition={{ delay: index * 0.3 + 0.4 }}
-              >
-                0{project.id}
-              </motion.span>
+              <div className="mt-6">
+                <h3 className="text-xl font-bold text-gray-800">
+                  {project.title}
+                </h3>
 
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute top-6 right-6 bg-white p-3 rounded-full cursor-pointer"
-              >
-                <FiArrowUpRight className="text-xl text-gray-800" />
-              </motion.div>
-
-              <div className="absolute bottom-6 left-6 text-white text-left">
-                <div className="flex items-center gap-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white ">
-                    {project.title}
-                  </h3>
-                  <span className="text-sm px-2 py-1 bg-white/10 rounded-full text-white ">
-                    {project.type}
-                  </span>
+                <div
+                  className="px-3 py-1 rounded-full text-sm inline-flex items-center mt-2"
+                  style={{
+                    background: `${primaryColor}15`,
+                    color: primaryColor,
+                    backdropFilter: "blur(4px)",
+                  }}
+                >
+                  {project.type === "Mobile" ? (
+                    <FiSmartphone className="mr-2" />
+                  ) : (
+                    <FiGlobe className="mr-2" />
+                  )}
+                  {project.type} Application
                 </div>
-                <p className="mt-1 text-white ">{project.location}</p>
+
+                <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="mt-4 relative h-[2px] bg-gray-200">
+                  <div className="absolute bottom-0 left-0 w-0 h-full bg-[#1a92ce] transition-all duration-500 group-hover:w-full" />
+                </div>
+
+                <div className="mt-6 flex justify-end">
+                  <button
+                    className="flex items-center px-4 py-2 rounded-full transition-all relative overflow-hidden border-2 group/button cursor-pointer"
+                    style={{
+                      borderColor: primaryColor,
+                      color: primaryColor,
+                    }}
+                  >
+                    <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
+                      View Details
+                    </span>
+
+                    <FiArrowRight className="ml-2 transition-transform group-hover/button:translate-x-1 relative z-10 group-hover/button:text-white" />
+
+                    <div
+                      className="absolute inset-0 bg-[#1a92ce]  opacity-0 transition-all duration-300 w-0 group-hover/button:w-full group-hover/button:opacity-100"
+                      style={{
+                        background: `linear-gradient(to right, ${primaryColor} 50%, ${primaryHover} 100%)`,
+                      }}
+                    />
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.1,
-              boxShadow: "0px 12px 24px rgba(0,0,0,0.2)",
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="flex justify-center mt-12"
+        >
+          <button
+            className="px-8 py-3 rounded-full transition-all flex items-center text-lg relative overflow-hidden group/seeAll cursor-pointer"
+            style={{
+              backgroundColor: primaryColor,
+              color: "white",
+              boxShadow: `0 4px 12px ${primaryColor}40`,
             }}
-            className="px-8 md:px-30  py-4 rounded-full bg-[#1a92ce] text-white text-lg md:text-xl font-bold shadow-md transition-all"
           >
-            <Link to="#">See All</Link>
-          </motion.button>
-        </div>
-      </main>
-    </div>
+            <span className="relative z-10">See All Projects</span>
+            <FiArrowRight className="ml-2 transition-transform group-hover/seeAll:translate-x-1 relative z-10" />
+
+            <div className="absolute inset-0 bg-[#1476a3] opacity-0 transition-opacity duration-300 group-hover/seeAll:opacity-100" />
+          </button>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
