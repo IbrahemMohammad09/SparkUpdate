@@ -1,6 +1,8 @@
 import "./RequestSuccess.css"
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import NavigationBar from "../../Components/NavigationBar";
+import Footer from "../../Components/Footer";
 
 export default function RequestSuccess() {
   const [show, setShow] = useState(false);
@@ -10,6 +12,8 @@ export default function RequestSuccess() {
   }, []);
 
   return (
+    <>
+    <NavigationBar />
     <div className="flex flex-col items-center justify-center h-screen bg-white overflow-hidden ">
       {show && (
         <>
@@ -56,6 +60,8 @@ export default function RequestSuccess() {
         Request sent successfully!
       </motion.span>
     </div>
+    <Footer />
+    </>
   );
 }
 
