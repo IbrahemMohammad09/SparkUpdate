@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/image/logo.webp";
 
 const links = [
-  { name: "Home", to: "/" },
+  { name: "Home", to: "/home" },
   { name: "Our Services", to: "/services" },
   { name: "Our Project", to: "/projects" },
   { name: "Our App", to: "/our_app" },
@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link
-            to="/"
+            to="/home"
             className="flex items-center space-x-3 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
             <img src={logo} alt="Logo Spark" className="w-8 lg:w-15" />
