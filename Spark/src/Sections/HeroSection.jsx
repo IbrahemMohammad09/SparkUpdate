@@ -12,8 +12,8 @@ const HeroSection = () => {
         char: Math.random() > 0.5 ? "1" : "0",
         left: Math.random() * 100,
         size: 20 + Math.random() * 12,
-        duration: 12 + Math.random() * 6,
-        delay: Math.random() * 5,
+        duration: 8 + Math.random() * 4,
+        delay: 0,
       })),
     []
   );
@@ -37,14 +37,16 @@ const HeroSection = () => {
           <motion.div
             key={binary.id}
             className="absolute font-mono text-blue-400"
-            initial={{ opacity: 0, y: "-100vh" }}
+            initial={{
+              opacity: 0.5,
+              y: "-20vh",
+            }}
             animate={{
-              opacity: [0, 0.5, 0],
-              y: "100vh",
+              opacity: [0.5, 0.5, 0],
+              y: "120vh",
             }}
             transition={{
               duration: binary.duration,
-              delay: binary.delay,
               repeat: Infinity,
               ease: "linear",
             }}

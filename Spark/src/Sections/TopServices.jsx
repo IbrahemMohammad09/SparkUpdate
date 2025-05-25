@@ -1,85 +1,184 @@
-import Services1 from "../assets/image/OurServices/Services1.webp";
-import { motion } from 'framer-motion'; 
-import { FaCheck } from "react-icons/fa6";
-import "./TopServices.css"
-export default function TopServices() {
-  const Topservices = [
-    {
-      title: "Company Services",
-      url: "/company-services",
-      img: Services1,
-      text1:"Social media content ",
-      text2:"Website Design",
-      text3:"UI/UX Solution",
-    },
-    {
-      title: "Student Services",
-      img: Services1,
-      text1:"Social media content ",
-      text2:"Website Design",
-      text3:"UI/UX Solution",
-    },
-    {
-      title: "Free Codes",
-      img: Services1,
-      text1:"Social media content ",
-      text2:"Website Design",
-      text3:"UI/UX Solution",
-    },
-    {
-      title: "SCRS",
-      img: Services1,
-      text1:"Social media content ",
-      text2:"Website Design",
-      text3:"UI/UX Solution",
-    }
-  ];
+import { motion } from "framer-motion";
+import { FaCode, FaPaintBrush, FaMobileAlt, FaChartLine } from "react-icons/fa";
+
+const services = [
+  {
+    title: "Web Development",
+    icon: <FaCode />,
+    features: [
+      "Full-stack Development",
+      "API Integration",
+      "Performance Optimization",
+      "Progressive Web Apps",
+    ],
+  },
+  {
+    title: "UI/UX Design",
+    icon: <FaPaintBrush />,
+    features: [
+      "Interactive Prototyping",
+      "User Research & Testing",
+      "Design Systems",
+      "Micro-Interactions",
+    ],
+  },
+  {
+    title: "Mobile Apps Development",
+    icon: <FaMobileAlt />,
+    features: [
+      "Cross-platform Solutions",
+      "Native iOS/Android",
+      "Push Notifications",
+      "App Store Optimization",
+    ],
+  },
+  {
+    title: "E-Marketing",
+    icon: <FaChartLine />,
+    features: [
+      "SEO Strategy",
+      "Social Media Campaigns",
+      "Conversion Optimization",
+      "Analytics & Reporting",
+    ],
+  },
+];
+
+const AnimatedGradientText = ({ children }) => (
+  <motion.span
+    className="font-bold bg-gradient-to-r from-[#0f70a3] to-[#23b4ff] bg-clip-text text-transparent"
+    animate={{
+      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+    }}
+    transition={{ duration: 6, repeat: Infinity }}
+    style={{
+      backgroundSize: "200% 200%",
+    }}
+  >
+    {children}
+  </motion.span>
+);
+
+const ServicesSection = () => {
+  const primaryColor = "#1a92ce";
+  const secondaryColor = "#0f70a3";
 
   return (
-    <>
-      <div className="my-20 p-9 md:px-16  bg-gradient rounded-2xl mx-2  "
-    >
-      {/* <p className=" text-lg">01 | Top Services</p> */}
-        <div className="flex flex-col  justify-center items-center lg:flex-row lg:justify-between my-4 container-card">
-        <p className="text-2xl md:text-5xl text-center text-white">Our Top Services Include</p>
-        <p className="text-[#0000009e] text-xl   lg:max-w-[530px] my-5  text-center ">
-          We are dedicated to <span className="text-white">crafting</span> compelling brand <span className="text-white">identities</span> , stunning <span className="text-white">visuals </span>,
-           and immersive <span className="text-white">digital experiences </span> that captivate audiences.
-        </p>
-        </div>
-        <div className="mt-2 lg:mt-4 md:p-4 rounded-2xl">
-          <div className="flex flex-col justify-center items-center lg:flex-row gap-8 mt-6 container-card">
-            {Topservices.map((topservices, index) => (
+    <section className="relative py-20 px-4 lg:px-8 ">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 font-mono"
+            initial={{ letterSpacing: "0.5em" }}
+            animate={{ letterSpacing: "0.1em" }}
+            transition={{ duration: 1 }}
+            style={{ color: primaryColor }}
+          >
+            OUR CORE SERVICES
+          </motion.h2>
+
+          <motion.p
+            className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            We are dedicated to{" "}
+            <AnimatedGradientText>crafting</AnimatedGradientText> compelling
+            brand <AnimatedGradientText>identities</AnimatedGradientText>,
+            stunning <AnimatedGradientText>visuals</AnimatedGradientText>, and
+            immersive{" "}
+            <AnimatedGradientText>digital experiences</AnimatedGradientText>{" "}
+            that captivate audiences.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 80, rotateX: -45 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 80,
+                damping: 15,
+              }}
+              viewport={{ once: true, amount: 0.5 }}
+              whileHover={{
+                rotateY: 15,
+                rotateX: 5,
+                translateY: -15,
+                boxShadow: `0 35px 60px -15px ${primaryColor}25`,
+              }}
+              className="group relative bg-white rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-[#1a92ce]/10 transform-style-preserve-3d"
+            >
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white to-[#1a92ce]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               <motion.div
-                key={index}
-                className=" flex flex-col  items-start w-72 md:w-82 h-72 rounded-2xl p-6 md:p-8 bg-[#f1f6f9] hover:scale-105 transition-all cursor-pointer"
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.4 }}
-                viewport={{ once: true, amount: 0.3 }}
+                className="flex justify-center mb-6"
+                whileHover={{
+                  rotateZ: [0, -10, 10, 0],
+                  transition: { duration: 0.6 },
+                }}
               >
-                <img src={topservices.img} alt={topservices.title} className="w-24" />
-                <div className="flex flex-col p-4">
-                  <h1 className="text-xl font-semibold text-[#212529] ">{topservices.title}</h1>
-                  <div className="flex gap-1.5 items-start mt-1">
-                  <FaCheck  className="text-[#2fb0cd] text-xl"/>
-                  <p className="text-base"> {topservices.text1}</p>
-                  </div>
-                  <div className="flex gap-1.5 items-start mt-1">
-                  <FaCheck  className="text-[#2fb0cd] text-xl "/>
-                  <p> {topservices.text2}</p>
-                  </div>
-                  <div className="flex gap-1.5 items-start mt-1">
-                  <FaCheck   className="text-[#2fb0cd] text-xl"/>
-                  <p> {topservices.text3}</p>
-                  </div>
-                  
+                <div
+                  className="text-6xl p-5 rounded-2xl shadow-inner-lg"
+                  style={{
+                    color: primaryColor,
+                    backgroundColor: `${primaryColor}08`,
+                    boxShadow: `inset 0 0 15px ${primaryColor}15`,
+                  }}
+                >
+                  {service.icon}
                 </div>
               </motion.div>
-            ))}
-          </div>
+
+              <div className="relative space-y-4">
+                <motion.h3
+                  className="text-2xl font-bold mb-4 font-mono text-center"
+                  style={{ color: secondaryColor }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {service.title}
+                </motion.h3>
+                <ul className="space-y-4">
+                  {service.features.map((feature) => (
+                    <motion.li
+                      key={feature}
+                      className="flex items-center text-gray-600 group-hover:text-gray-800 transition-colors text-sm md:text-base"
+                      whileHover={{ x: 10 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                    >
+                      <motion.span
+                        className="mr-3"
+                        style={{ color: primaryColor }}
+                        animate={{
+                          rotate: [0, 20, -20, 0],
+                          transition: { repeat: Infinity, duration: 1.5 },
+                        }}
+                      >
+                        ➤
+                      </motion.span>
+                      {feature}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </>
+    </section>
   );
-}
+};
+
+export default ServicesSection;
