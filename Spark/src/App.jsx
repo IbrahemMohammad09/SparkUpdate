@@ -1,20 +1,18 @@
 import React from "react";
 import "./App.css";
+// import Spinner from "./Components/Spinner";
+import { BrowserRouter, Routes, Navigate, Route, Link } from "react-router-dom";
+import LoadingPage from "./Pages/LoadingPage";
+// import TopServices from "./Sections/TopServices";
 
-const NavigationBar = React.lazy(() => import("./Components/NavigationBar"));
-const Footer = React.lazy(() => import("./Components/Footer"));
+
+// const NavigationBar = React.lazy(() => import("./Components/NavigationBar"));
+// const Footer = React.lazy(() => import("./Components/Footer"));
 const OurApp = React.lazy(() => import("./Pages/OurApp"));
 const AboutUs = React.lazy(() => import("./Pages/AboutUS"));
 const IntroPage = React.lazy(() => import("./Pages/IntroPage"));
 const ErrorPage = React.lazy(() => import("./Pages/ErrorPage/ErrorPage"));
-const RequestSuccess = React.lazy(() =>
-  import("./Pages/SuccessPage/RequestSuccess")
-);
-
-import Spinner from "./Components/Spinner";
-import { BrowserRouter, Routes, Navigate, Route, Link } from "react-router-dom";
-import LoadingPage from "./Pages/LoadingPage";
-import TopServices from "./Sections/TopServices";
+const RequestSuccess = React.lazy(() =>import("./Pages/SuccessPage/RequestSuccess"));
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
 const OurTeam = React.lazy(() => import("./Pages/OurTeam"));
@@ -23,7 +21,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
         <Routes>
           <Route path={"/"} exact element={<IntroPage />} />
 
@@ -36,10 +34,11 @@ function App() {
           <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="/rquest-success" element={<RequestSuccess />} />
-          <Route path="/spinner" element={<Spinner />} />
-          <Route path="/top-services" element={<TopServices />} />
+
+          {/* <Route path="/spinner" element={<Spinner />} /> */}
+          {/* <Route path="/top-services" element={<TopServices />} /> */}
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );

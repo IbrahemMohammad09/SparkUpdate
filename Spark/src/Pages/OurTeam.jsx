@@ -4,6 +4,9 @@ import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import teamData from "../Utils/TeamData";
 import Team_bg from "../assets/image/OurTeam/team-bg.png";
 import MainTitle from "../Components/MainTitle"
+import Footer from "../Components/Footer";
+import NavigationBar from "../Components/NavigationBar";
+
 export default function OurTeam() {
   MainTitle("Our Team");
   const [current, setCurrent] = useState(0);
@@ -22,6 +25,8 @@ export default function OurTeam() {
   const bioWords = currentMember.bio.split(" ");
 
   return (
+    <>
+    <NavigationBar />
     <div
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-white"
       style={{
@@ -159,5 +164,7 @@ export default function OurTeam() {
         </button>
       </div>
     </div>
+    <Footer />                            
+    </>
   );
 }

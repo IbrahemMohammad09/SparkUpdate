@@ -168,7 +168,7 @@ export default function ErrorPage() {
           {currentMessage}
         </p>
         <Link
-          to="/"
+          to="/home"
           className="mt-8 px-8 py-3 bg-[#1a92ce] hover:bg-[#1474a4] 
             rounded-full text-white font-bold transition-all duration-300 
             hover:scale-105 shadow-lg"

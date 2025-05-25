@@ -4,6 +4,8 @@ import { FiMail, FiPhone } from "react-icons/fi";
 import HeroSection from "../assets/image/ContactUs/ContactUs Photo.png";
 import { div } from "framer-motion/client";
 import MainTitle from "../Components/MainTitle";
+import Footer from "../Components/Footer";
+import NavigationBar from "../Components/NavigationBar";
 
 const ContactUs = () => {
   const animationProps = {
@@ -13,7 +15,10 @@ const ContactUs = () => {
   };
   MainTitle("Contact Us");
   return (
+    <>
+    <NavigationBar />
     <div className="flex items-center justify-center relative overflow-hidden py-10 min-h-[calc(100vh-80px)]">
+      
       {/* Background Image */}
       <motion.img
         src={HeroSection}
@@ -77,7 +82,10 @@ const ContactUs = () => {
           </motion.a>
         </motion.div>
       </div>
+     
     </div>
+    <Footer />
+    </>
    
     
   );

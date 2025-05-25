@@ -4,10 +4,15 @@ import { AiFillApple, AiFillAndroid } from "react-icons/ai";
 import image2 from "../assets/image/OurApp/2.svg";
 import MainTitle from "../Components/MainTitle";
 import { div } from "framer-motion/client";
+import Footer from "../Components/Footer";
+import NavigationBar from "../Components/NavigationBar";
+
 
 const OurApp = () => {
   MainTitle("Our App");
   return (
+    <>
+    <NavigationBar />
     <div className="flex flex-col-reverse md:flex-row items-center justify-between min-h-screen bg-gradient-to-br from-blue-50 to-white p-6 md:px-12 lg:px-24 xl:px-32 py-12 md:py-24">
       <div className="flex flex-col items-start text-left w-full md:w-1/2 max-w-2xl mx-auto mt-8 md:mt-0 md:mr-12 lg:mr-16">
         <motion.h1
@@ -71,6 +76,8 @@ const OurApp = () => {
         />
       </motion.div>
     </div> 
+    <Footer />
+    </>
   );
 };
 

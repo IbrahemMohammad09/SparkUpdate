@@ -5,6 +5,9 @@ import { AiFillInstagram } from 'react-icons/ai';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import About from "../assets/image/AboutUs/About.png";
 import MainTitle from '../Components/MainTitle';
+import Footer from "../Components/Footer";
+import NavigationBar from "../Components/NavigationBar";
+
 const fadeInBottom = {
   initial: {
     y: 50,   
@@ -27,6 +30,7 @@ export default function AboutUs() {
   MainTitle("About Us");
   return (
     <div className="overflow-hidden"> 
+    <NavigationBar />
       <motion.div
         className="flex flex-col-reverse items-center justify-center lg:items-start lg:flex-row lg:justify-center px-7 py-11 "
         variants={fadeInBottom} initial="initial" animate="animate">
@@ -63,6 +67,7 @@ export default function AboutUs() {
           </div>
         </div>
       </motion.div>
+      <Footer />
     </div>
   );
 }
