@@ -9,3 +9,16 @@
 .font-roboto-serif {
   font-family: "Roboto Serif", serif;
 }
+
+@keyframes pattern-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.animate-pattern-move {
+  animation: pattern-move 20s linear infinite;
+}
