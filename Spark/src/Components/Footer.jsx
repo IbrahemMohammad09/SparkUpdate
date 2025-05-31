@@ -31,13 +31,13 @@ export default function Footer() {
             </div>
             <div className="flex  flex-col">
               <Link
-                to="our_services"
+                to="/our_services"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Our Services
               </Link>
               <Link
-                to="our_team"
+                to="/our_team"
                 className="hover:text-white transition-transform duration-300 cursor-pointer text-lg font-normal"
               >
                 Our Team

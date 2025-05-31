@@ -16,7 +16,7 @@ const RequestSuccess = React.lazy(() =>import("./Pages/SuccessPage/RequestSucces
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
 const OurTeam = React.lazy(() => import("./Pages/OurTeam"));
-
+const OurProjects= React.lazy(()=> import("./Pages/OurProjects"))
 function App() {
   return (
     <>
@@ -30,6 +30,7 @@ function App() {
           <Route path={"/contact_us"} element={<ContactUs />} />
           <Route path={"/our_app"} element={<OurApp />} />
           <Route path={"/our_team"} element={<OurTeam />} />
+          <Route path={"/our_projects"} element={<OurProjects/>} />
           <Route path={"/loading"} element={<LoadingPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/error-page" element={<ErrorPage />} />
