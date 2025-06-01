@@ -7,7 +7,7 @@ import logo from "../assets/image/logo.webp";
 const links = [
   { name: "Home", to: "/home" },
   { name: "Our Services", to: "/services" },
-  { name: "Our Project", to: "/projects" },
+  { name: "Our Project", to: "/our_projects" },
   { name: "Our App", to: "/our_app" },
   { name: "Contact US", to: "/contact_us" },
   { name: "Our Team", to: "/our_team" },

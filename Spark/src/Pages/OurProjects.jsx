@@ -4,9 +4,13 @@ import { FaArrowRight } from "react-icons/fa";
 import Footer from "../Components/Footer";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import NavigationBar from "../Components/NavigationBar";
+
 export default function OurProjects() {
   MainTitle("Our Projects");
   return (
+    <>
+    <NavigationBar />
     <div className="relative overflow-hidden bg-gray-50 ">
       <div className="relative max-w-7xl mx-auto px-6 py-20 lg:px-8">
       <motion.p
@@ -69,5 +73,6 @@ export default function OurProjects() {
       </div>
       <Footer />
     </div>
+    </>
   );
 }
