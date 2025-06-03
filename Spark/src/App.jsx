@@ -3,6 +3,7 @@ import "./App.css";
 // import Spinner from "./Components/Spinner";
 import { BrowserRouter, Routes, Navigate, Route, Link } from "react-router-dom";
 import LoadingPage from "./Pages/LoadingPage";
+import Scroll from "./Components/ScrollToTop";
 // import TopServices from "./Sections/TopServices";
 
 // const NavigationBar = React.lazy(() => import("./Components/NavigationBar"));
@@ -25,6 +26,7 @@ function App() {
     <>
       <BrowserRouter>
         {/* <NavigationBar /> */}
+        <Scroll/>
         <Routes>
           <Route path={"/"} exact element={<IntroPage />} />
 
