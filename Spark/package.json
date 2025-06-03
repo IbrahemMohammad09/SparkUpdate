@@ -24,8 +24,10 @@
     "react-simple-typewriter": "^5.0.1",
     "react-spinners": "^0.17.0",
     "react-tsparticles": "^2.12.2",
+    "three": "^0.177.0",
     "tsparticles": "^3.8.1",
-    "tsparticles-slim": "^2.12.0"
+    "tsparticles-slim": "^2.12.0",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

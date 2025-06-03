@@ -4,7 +4,7 @@ import { services } from "../Utils/ServicesData";
 import Navbar from "../Components/NavigationBar";
 import Footer from "../Components/Footer";
 import background from "../assets/image/OurServices/22623064.jpg";
-
+import { Link } from "react-router-dom";
 const OurServices = () => {
   const primaryColor = "#1a92ce";
   const iconComponents = {
@@ -151,6 +151,32 @@ const OurServices = () => {
                           {service.description}
                         </p>
 
+///
+                      <Link to={`/service/${service.id}`}>
+                <motion.button
+                  className="flex items-center justify-between px-5 py-3 rounded-full border-2 self-start mt-auto"
+                  style={{
+                    borderColor: primaryColor,
+                    color: primaryColor,
+                  }}
+                  whileHover={{
+                    backgroundColor: primaryColor,
+                    color: "white",
+                    boxShadow: `0 5px 15px ${primaryColor}50`,
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <span>{service.buttonText}</span>
+                  <motion.span
+                    animate={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <FiArrowRight className="ml-2" />
+                  </motion.span>
+                </motion.button>
+              </Link>
+///////
                         <div className="mt-auto">
                           <motion.div
                             initial="hidden"
@@ -193,6 +219,7 @@ const OurServices = () => {
                           </motion.button>
                         </div>
                       </div>
+/////////////////
                     </div>
                   </motion.div>
                 );
