@@ -99,6 +99,48 @@ const ServicesSection = () => {
             that captivate audiences.
           </motion.p>
         </motion.div> 
+
+        <motion.div
+           initial={{ opacity: 0, y: -30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           viewport={{ once: true }}
+           whileHover={{
+           rotateY: 4,
+           translateY: -10,
+           boxShadow: `0 30px 50px -10px #1a92ce80`,
+          }}
+            className="relative max-w-4xl mx-auto p-8 rounded-2xl my-14
+            bg-gradient-to-br from-[#e3f2fd] via-[#bbdefb] to-[#90caf9] border border-[#1a92ce33]
+            shadow shadow-[#1a92ce22] transition-shadow duration-500 hover:shadow-[#1a92ce80] overflow-hidden"
+        >
+          <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#81d4fa88] to-transparent rounded-l-2xl pointer-events-none" />
+         <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#81d4fa88] to-transparent rounded-r-2xl pointer-events-none" />
+        <div className="relative z-10 flex flex-col items-center space-y-6 text-center">
+        <motion.div
+          animate={{
+          scale: [1, 1.05, 1],
+          boxShadow: [
+          "0 0 10px #1a92ce",
+          "0 0 20px #1a92ce",
+          "0 0 10px #1a92ce",
+         ],
+        }}
+       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+       className="w-20 h-20 rounded-full bg-[#1a92ce] flex items-center justify-center text-white text-5xl
+       shadow-md border-4 border-white"
+      >
+         <FaCode />
+     </motion.div>
+        <p className="text-2xl font-bold text-[#0f70a3] ">Our Free Codes</p>
+        <Link
+          to="/"
+          className="px-6 py-2 rounded-xl bg-[#1a92ce] text-white font-medium tracking-wide hover:bg-[#0f70a3] transition transform hover:scale-105 shadow"
+        >
+           Show all codes
+        </Link>
+     </div> 
+   </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -177,28 +219,6 @@ const ServicesSection = () => {
             
           ))}
         </div>
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="rounded-2xl shadow-2xl p-6 w-80 my-10"
-          style={{
-           background: "linear-gradient(145deg, #0f1e2e 0%, #103f5d 50%, #1a92ce 100%)",
-           }}
-        >
-            <img src={img} alt="free-code"
-              className="w-28 h-28 object-cover rounded-full mx-auto border-4 border-[#2fb0cd] shadow-md"
-            />
-           <p className="text-center text-white text-xl font-semibold mt-4 tracking-wide">
-              Our Free Codes
-           </p>
-           <Link  to="/"
-            className="text-base block mt-4 mx-auto bg-[#2fb0cd] text-white text-center px-5 py-2 rounded-xl w-24 font-medium tracking-wide transition hover:bg-[#27a1ba] hover:scale-110 shadow"
-           >
-             View
-          </Link>
-       </motion.div>
       </div>
     </section>
   );
