@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FaCode, FaPaintBrush, FaMobileAlt, FaChartLine } from "react-icons/fa";
-import img from "../assets/image/OurServices/free_code.jpg"
 import { Link } from 'react-router-dom';
 const services = [
   {
@@ -110,13 +109,13 @@ const ServicesSection = () => {
            translateY: -10,
            boxShadow: `0 30px 50px -10px #1a92ce80`,
           }}
-            className="relative max-w-4xl mx-auto p-8 rounded-2xl my-14
+            className=" relative max-w-lg mx-auto p-8 rounded-2xl my-14
             bg-gradient-to-br from-[#e3f2fd] via-[#bbdefb] to-[#90caf9] border border-[#1a92ce33]
             shadow shadow-[#1a92ce22] transition-shadow duration-500 hover:shadow-[#1a92ce80] overflow-hidden"
         >
           <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#81d4fa88] to-transparent rounded-l-2xl pointer-events-none" />
          <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#81d4fa88] to-transparent rounded-r-2xl pointer-events-none" />
-        <div className="relative z-10 flex flex-col items-center space-y-6 text-center">
+        <div className="relative z-10 flex flex-row items-start justify-center space-x-6 text-center">
         <motion.div
           animate={{
           scale: [1, 1.05, 1],
@@ -132,13 +131,15 @@ const ServicesSection = () => {
       >
          <FaCode />
      </motion.div>
-        <p className="text-2xl font-bold text-[#0f70a3] ">Our Free Codes</p>
+     <div className="flex flex-col justify-center items-center space-y-6">
+        <p className=" text-2xl font-bold text-[#0f70a3] ">Our Free Codes</p>
         <Link
           to="/"
           className="px-6 py-2 rounded-xl bg-[#1a92ce] text-white font-medium tracking-wide hover:bg-[#0f70a3] transition transform hover:scale-105 shadow"
         >
            Show all codes
         </Link>
+        </div>
      </div> 
    </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
