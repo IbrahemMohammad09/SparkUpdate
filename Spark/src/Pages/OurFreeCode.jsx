@@ -22,14 +22,12 @@ export default function OurFreeCode() {
       opacity: 0,
       rotateX: 10,
       scale: 0.96,
-      borderWidth: 0,
     },
     visible: {
       y: 0,
       opacity: 1,
       rotateX: 0,
       scale: 1,
-      borderWidth: 3,
       transition: {
         type: "spring",
         stiffness: 120,
@@ -56,7 +54,6 @@ export default function OurFreeCode() {
 
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,7 +68,6 @@ export default function OurFreeCode() {
             </p>
           </motion.div>
 
-          {/* Cards Grid */}
           <motion.div
             variants={container}
             initial="hidden"
@@ -87,16 +83,14 @@ export default function OurFreeCode() {
                 key={index}
                 variants={cardItem}
                 whileHover="hover"
-                className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col relative"
+                className="relative flex flex-col bg-gradient-to-br from-gray-50 to-white rounded-t-3xl rounded-b-xl overflow-hidden shadow-md transition-all border-l-[5px] border-l-[#2fb0cd33]"
                 style={{
                   width: "340px",
                   minHeight: "480px",
-                  borderStyle: "solid",
-                  borderColor: "rgba(47, 176, 205, 0.2)",
+                  border: "2px solid transparent",
                 }}
               >
-                {/* Image Container */}
-                <div className="relative pt-[75%] overflow-hidden mx-3 mt-3 rounded-lg">
+                <div className="relative pt-[75%] overflow-hidden mx-3 mt-3 rounded-xl">
                   <motion.img
                     src={item.imageUrl}
                     alt={item.title}
@@ -110,21 +104,26 @@ export default function OurFreeCode() {
                   />
                 </div>
 
-                {/* Content Section */}
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 flex flex-col flex-grow relative group">
                   <motion.h3
-                    className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#2fb0cd] transition-colors duration-300"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
+                    className="text-xl font-bold text-gray-800 mb-2 relative"
                   >
                     {item.title}
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ delay: 0.4, duration: 0.5 }}
+                      className="h-[2px] bg-[#2fb0cd] mt-1 rounded"
+                    />
                   </motion.h3>
 
                   <motion.p
                     className="text-gray-500 text-base mb-5 line-clamp-3"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
                     {item.description}
@@ -140,7 +139,7 @@ export default function OurFreeCode() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-base font-medium text-[#2fb0cd] hover:text-white hover:bg-[#2fb0cd] transition-all duration-300 border-2 border-[#2fb0cd] group-hover:bg-[#2fb0cd] group-hover:text-white"
+                      className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-base font-medium text-[#2fb0cd] hover:text-white hover:bg-[#2fb0cd] transition-all duration-300 border-2 border-[#2fb0cd]"
                       whileHover={{
                         scale: 1.06,
                         boxShadow: "0 8px 20px -5px rgba(47, 176, 205, 0.4)",
