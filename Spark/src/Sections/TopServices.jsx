@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { FaCode, FaPaintBrush, FaMobileAlt, FaChartLine } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import img from "../assets/image/OurServices/free_code.jpg";
+import { Link } from "react-router-dom";
+
 const services = [
   {
     title: "Web Development",
@@ -97,6 +99,7 @@ const ServicesSection = () => {
             <AnimatedGradientText>digital experiences</AnimatedGradientText>{" "}
             that captivate audiences.
           </motion.p>
+
         </motion.div> 
         {/* Free Codes Card */}
         <motion.div
@@ -139,6 +142,7 @@ const ServicesSection = () => {
        </Link>
      </div>
  </motion.div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
@@ -215,9 +219,36 @@ const ServicesSection = () => {
                 </ul>
               </div>
             </motion.div>
-            
           ))}
         </div>
+
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="rounded-2xl shadow-2xl p-6 w-80 my-10"
+          style={{
+            background:
+              "linear-gradient(145deg, #0f1e2e 0%, #103f5d 50%, #1a92ce 100%)",
+          }}
+        >
+          <img
+            src={img}
+            alt="free-code"
+            className="w-28 h-28 object-cover rounded-full mx-auto border-4 border-[#2fb0cd] shadow-md"
+          />
+          <p className="text-center text-white text-xl font-semibold mt-4 tracking-wide">
+            Our Free Codes
+          </p>
+          <Link
+            to="/our_free_code"
+            className="text-base block mt-4 mx-auto bg-[#2fb0cd] text-white text-center px-5 py-2 rounded-xl w-24 font-medium tracking-wide transition hover:bg-[#27a1ba] hover:scale-110 shadow"
+          >
+            View
+          </Link>
+        </motion.div>
+
       </div>
     </section>
   );
