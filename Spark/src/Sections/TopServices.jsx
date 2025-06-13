@@ -135,7 +135,7 @@ const ServicesSection = () => {
        </motion.div>
         <p className="text-2xl font-bold text-[#0f70a3]">Our Free Codes</p>
         <Link
-          to="/"
+          to="/our_free_code"
           className="px-6 py-2 rounded-xl bg-[#1a92ce] text-white font-medium tracking-wide hover:bg-[#0f70a3] transition transform hover:scale-105 shadow"
         >
          Show all codes
@@ -222,7 +222,7 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -247,7 +247,7 @@ const ServicesSection = () => {
           >
             View
           </Link>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>
