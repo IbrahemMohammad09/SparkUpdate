@@ -21,12 +21,14 @@ const OurTeam = React.lazy(() => import("./Pages/OurTeam"));
 const OurProjects = React.lazy(() => import("./Pages/OurProjects"));
 const OurServices = React.lazy(() => import("./Pages/OurServices"));
 const BookServices = React.lazy(() => import("./Pages/BookServices"));
+const OurFreeCode = React.lazy(() => import("./Pages/OurFreeCode"));
+
 function App() {
   return (
     <>
       <BrowserRouter>
         {/* <NavigationBar /> */}
-        <Scroll/>
+        <Scroll />
         <Routes>
           <Route path={"/"} exact element={<IntroPage />} />
 
@@ -39,6 +41,7 @@ function App() {
           <Route path={"/our_services"} element={<OurServices />} />
           <Route path={"/book_services"} element={<BookServices />} />
           <Route path="/service/:id" element={<BookServices />} />
+          <Route path="/our_free_code" element={<OurFreeCode />} />
           <Route path={"/loading"} element={<LoadingPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/error-page" element={<ErrorPage />} />
