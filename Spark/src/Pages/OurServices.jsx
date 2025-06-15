@@ -162,8 +162,10 @@ const OurServices = () => {
                           >
                             <div className="h-full bg-[#1a92ce]" />
                           </motion.div>
-
-                          <Link to={`/service/${service.id}`}>
+                          <Link
+                            to={`/service/${service.id}`}
+                            state={{ serviceName: service.title }}
+                          >
                             <motion.button
                               className="flex items-center justify-between px-4 py-2 rounded-full mx-auto text-sm"
                               style={{
