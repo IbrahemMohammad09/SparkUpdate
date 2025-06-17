@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams , useLocation  } from "react-router-dom";
 import { services } from "../Utils/ServicesData";
 import ErrorPage from "./ErrorPage/ErrorPage";
 import { motion } from "framer-motion";
@@ -10,8 +10,10 @@ import { MdEmail } from "react-icons/md";
 export default function BookServices() {
   MainTitle("Book Service");
   const { id } = useParams();
-  const service = services.find((s) => s.id.toString() === id);
-  if (!service) return <ErrorPage />;
+const location = useLocation();
+const service = services.find((s) => s.id.toString() === id);
+const serviceName = location.state?.serviceName || service?.title;
+if (!service) return <ErrorPage />;
 
   return (
     <div>
@@ -79,9 +81,12 @@ export default function BookServices() {
                 />
               </div>
               <div className="relative w-full">
-                <IoChatbubbleEllipses className="absolute left-4 top-4 text-[#2fb0cd]" />
+                 <label className="block text-sm font-medium text-[#2fb0cd] my-2">
+                  Type Your Message...
+                 </label>
+                <IoChatbubbleEllipses className="absolute left-4 top-11 text-[#2fb0cd]" />
                 <textarea
-                  placeholder="Type your message..."
+                 defaultValue={`I wanna book this service " ${serviceName} "`}
                   className="text-sm w-full pl-12  pr-4 py-3 h-28 bg-gray-100 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2fb0cd]"
                 />
               </div>
