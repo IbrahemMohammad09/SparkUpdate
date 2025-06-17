@@ -4,8 +4,10 @@ import { services } from "../Utils/ServicesData";
 import Navbar from "../Components/NavigationBar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
+import MainTitle from "../Components/MainTitle";
 
 const OurServices = () => {
+  MainTitle("Our Services")
   const primaryColor = "#1a92ce";
 
   const cardVariants = {

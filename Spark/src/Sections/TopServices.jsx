@@ -13,6 +13,7 @@ const services = [
       "Performance Optimization",
       "Progressive Web Apps",
     ],
+    URl : "/service/1"
   },
   {
     title: "UI/UX Design",
@@ -23,6 +24,7 @@ const services = [
       "Design Systems",
       "Micro-Interactions",
     ],
+    URL : "/service/6"
   },
   {
     title: "Mobile Apps Development",
@@ -33,6 +35,7 @@ const services = [
       "Push Notifications",
       "App Store Optimization",
     ],
+    URL : "/service/2"
   },
   {
     title: "E-Marketing",
@@ -43,6 +46,7 @@ const services = [
       "Conversion Optimization",
       "Analytics & Reporting",
     ],
+    URL : "/service/3"
   },
 ];
 
