@@ -3,8 +3,10 @@ import Particles from "react-tsparticles";
 import { useCallback } from "react";
 import { loadSlim } from "tsparticles-slim";
 import { useNavigate } from "react-router-dom";
+import MainTitle from "../Components/MainTitle";
 
 const IntroPage = () => {
+  MainTitle ("");
   const primaryColor = "#1a92ce";
   const gradientStart = "#23b4ff";
   const gradientEnd = "#1a92ce";
