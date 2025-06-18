@@ -8,7 +8,7 @@ const links = [
   { name: "Home", to: "/home" },
 
 
-  { name: "Our Project", to: "/our_projects" },
+  { name: "Our Projects", to: "/our_projects" },
 
   { name: "Our Services", to: "/our_services" },
 
