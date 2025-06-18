@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 import NavigationBar from "../Components/NavigationBar";
 
 export default function OurTeam() {
-  MainTitle("Our Team");
+  MainTitle(" | Our Team");
   const [current, setCurrent] = useState(0);
   const [activeOverlay, setActiveOverlay] = useState(false);
 

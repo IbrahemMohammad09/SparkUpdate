@@ -6,7 +6,7 @@ import HeroSection from "../Sections/HeroSection";
 import TopServices from "../Sections/TopServices";
 import OurProjects from "../Sections/OurProjects";
 function Homepage() {
-  MainTitle("Home Page");
+  MainTitle(" | Home Page");
   return (
     <>
       <NavigationBar />

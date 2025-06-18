@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import NavigationBar from "../Components/NavigationBar";
 
 export default function OurProjects() {
-  MainTitle("Our Projects");
+  MainTitle(" | Our Projects");
   return (
     <>
       <NavigationBar />

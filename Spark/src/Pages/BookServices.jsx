@@ -8,7 +8,7 @@ import MainTitle from "../Components/MainTitle";
 import NavigationBar from "../Components/NavigationBar";
 import { MdEmail } from "react-icons/md";
 export default function BookServices() {
-  MainTitle("Book Service");
+  MainTitle(" | Book Service");
   const { id } = useParams();
 const location = useLocation();
 const service = services.find((s) => s.id.toString() === id);

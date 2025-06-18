@@ -13,7 +13,7 @@ const ContactUs = () => {
     animate: { scale: 1, y: 0 },
     transition: { duration: 3, ease: "easeOut" },
   };
-  MainTitle("Contact Us");
+  MainTitle(" | Contact Us");
   return (
     <>
     <NavigationBar />
