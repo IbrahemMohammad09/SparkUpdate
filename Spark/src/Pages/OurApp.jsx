@@ -9,7 +9,7 @@ import NavigationBar from "../Components/NavigationBar";
 
 
 const OurApp = () => {
-  MainTitle("Our App");
+  MainTitle(" | Our App");
   return (
     <>
     <NavigationBar />

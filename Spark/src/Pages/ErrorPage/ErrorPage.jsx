@@ -2,8 +2,10 @@
 import { useState, useEffect } from "react";
 import "./ErrorPage.css";
 import { Link } from "react-router-dom";
+import MainTitle from "../../Components/MainTitle";
 
 export default function ErrorPage() {
+  MainTitle (" | Error")
   const [messages] = useState([
     "The page flew away with the snowflakes! ❄️",
     "Error: Winter magic in progress! 🌨️",

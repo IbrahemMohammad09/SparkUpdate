@@ -12,9 +12,7 @@ const OurApp = React.lazy(() => import("./Pages/OurApp"));
 const AboutUs = React.lazy(() => import("./Pages/AboutUS"));
 const IntroPage = React.lazy(() => import("./Pages/IntroPage"));
 const ErrorPage = React.lazy(() => import("./Pages/ErrorPage/ErrorPage"));
-const RequestSuccess = React.lazy(() =>
-  import("./Pages/SuccessPage/RequestSuccess")
-);
+const RequestSuccess = React.lazy(() =>import("./Pages/SuccessPage/RequestSuccess"));
 const HomePage = React.lazy(() => import("./Pages/HomePage"));
 const ContactUs = React.lazy(() => import("./Pages/ContactUs"));
 const OurTeam = React.lazy(() => import("./Pages/OurTeam"));

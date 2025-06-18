@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import NavigationBar from "../../Components/NavigationBar";
 import Footer from "../../Components/Footer";
+import MainTitle from "../../Components/MainTitle";
 
 export default function RequestSuccess() {
+  MainTitle (" | Rquest Success")
   const [show, setShow] = useState(false);
 
   useEffect(() => {

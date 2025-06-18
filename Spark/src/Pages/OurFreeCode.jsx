@@ -3,8 +3,10 @@ import { FaArrowRight } from "react-icons/fa";
 import NavigationBar from "../Components/NavigationBar";
 import Footer from "../Components/Footer";
 import freeCodeData from "../Utils/FreeCodeData";
+import MainTitle from "../Components/MainTitle";
 
 export default function OurFreeCode() {
+  MainTitle (" | Free Codes")
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,7 +63,7 @@ export default function OurFreeCode() {
             className="text-center mb-14"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Our <span className="text-[#2fb0cd]">Free Code</span>
+              Our <span className="text-[#2fb0cd]">Free Codes</span>
             </h1>
             <p className="max-w-2xl mx-auto text-gray-500 text-lg">
               Premium quality code snippets for your next project

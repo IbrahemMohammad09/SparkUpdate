@@ -27,7 +27,7 @@ const fadeInBottom = {
 };
 
 export default function AboutUs() {
-  MainTitle("About Us");
+  MainTitle(" | About Us");
   return (
     <div className="overflow-hidden"> 
     <NavigationBar />
