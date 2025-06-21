@@ -3,7 +3,8 @@ import { FiArrowRight, FiSmartphone, FiGlobe } from "react-icons/fi";
 import image1 from "../assets/image/OurProjects/1.jpg";
 import image2 from "../assets/image/OurProjects/2.png";
 import bgImage from "../assets/image/OurProjects/Bg.png";
-
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 const OurProjects = () => {
   const projects = [
     {
@@ -144,21 +145,16 @@ const OurProjects = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="flex justify-center mt-12"
+          className="flex justify-center items-center mt-12"
         >
-          <button
-            className="px-8 py-3 rounded-full transition-all flex items-center text-lg relative overflow-hidden group/seeAll cursor-pointer"
-            style={{
-              backgroundColor: primaryColor,
-              color: "white",
-              boxShadow: `0 4px 12px ${primaryColor}40`,
-            }}
+          <Link
+            to="/our_projects"
+            className="relative tracking-wide flex items-center justify-center gap-2 px-8 py-4 bg-[#1a92ce] text-white font-medium rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:brightness-110 hover:translate-y-[-2px] hover:shadow-xl"
           >
-            <span className="relative z-10">See All Projects</span>
-            <FiArrowRight className="ml-2 transition-transform group-hover/seeAll:translate-x-1 relative z-10" />
-
-            <div className="absolute inset-0 bg-[#1476a3] opacity-0 transition-opacity duration-300 group-hover/seeAll:opacity-100" />
-          </button>
+           <span className="z-10">See All Projects</span>
+           <span className="z-10 animate-wiggle"><FaArrowRight/></span>
+           <span className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-50 rounded-full animate-shine pointer-events-none"></span>
+         </Link>
         </motion.div>
       </div>
     </section>
