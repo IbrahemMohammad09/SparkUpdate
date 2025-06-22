@@ -43,7 +43,13 @@ const teamData = [
     bio: "A passionate designer with 5 years of experience in creating stunning interfaces.",
   },
   {
-    name: "Adeeb Moualla6",
+    name: "ib Moualla6",
+    position: "FrontEnd Developer",
+    image: "/src/assets/image/OurTeam/3.jpg",
+    bio: "A passionate designer with 5 years of experience in creating stunning interfaces.",
+  },
+  {
+    name: "ib Moualla6",
     position: "FrontEnd Developer",
     image: "/src/assets/image/OurTeam/3.jpg",
     bio: "A passionate designer with 5 years of experience in creating stunning interfaces.",
