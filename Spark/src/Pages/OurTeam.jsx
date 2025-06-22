@@ -10,9 +10,6 @@ import NavigationBar from "../Components/NavigationBar";
 export default function OurTeam() {
   MainTitle(" | Our Team");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [positionIndexes, setPositionIndexes] = useState(
-    Array.from({ length: teamData.length }, (_, i) => i % 5)
-  );
   const [activeOverlayIndex, setActiveOverlayIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
@@ -30,35 +27,41 @@ export default function OurTeam() {
   const handleNext = () => {
     setActiveOverlayIndex(null);
     setDirection(1);
-    if (isMobile) {
-      setCurrentIndex((prev) => (prev + 1) % teamData.length);
-    } else {
-      setPositionIndexes((prevIndexes) => {
-        return prevIndexes.map((prevIndex) => (prevIndex + 1) % 5);
-      });
-    }
+    setCurrentIndex((prev) => (prev + 1) % teamData.length);
   };
 
   const handlePrev = () => {
     setActiveOverlayIndex(null);
     setDirection(-1);
-    if (isMobile) {
-      setCurrentIndex((prev) => (prev - 1 + teamData.length) % teamData.length);
+    setCurrentIndex((prev) => (prev - 1 + teamData.length) % teamData.length);
+  };
+
+  const handleCardClick = (index) => {
+    if (index === currentIndex) {
+      setActiveOverlayIndex(activeOverlayIndex === index ? null : index);
     } else {
-      setPositionIndexes((prevIndexes) => {
-        return prevIndexes.map((prevIndex) => (prevIndex + 4) % 5);
-      });
+      setDirection(index > currentIndex ? 1 : -1);
+      setCurrentIndex(index);
+      setActiveOverlayIndex(null);
     }
   };
 
-  const positions = ["left", "left1", "center", "right1", "right"];
+  const getCardPosition = (index) => {
+    const diff = (index - currentIndex + teamData.length) % teamData.length;
+
+    if (diff === 0) return "center";
+    if (diff === 1 || diff === teamData.length - 3) return "right1";
+    if (diff === 2 || diff === teamData.length - 2) return "right";
+    if (diff === teamData.length - 1 || diff === 3) return "left1";
+    return "left";
+  };
 
   const cardVariants = {
-    left: { x: "-90%", scale: 0.5, zIndex: 1 },
-    left1: { x: "-50%", scale: 0.7, zIndex: 2 },
-    center: { x: "0%", scale: 1, zIndex: 5 },
-    right1: { x: "50%", scale: 0.7, zIndex: 2 },
-    right: { x: "90%", scale: 0.5, zIndex: 1 },
+    left: { x: "-90%", scale: 0.5, zIndex: 1, opacity: 0.5 },
+    left1: { x: "-50%", scale: 0.7, zIndex: 2, opacity: 0.8 },
+    center: { x: "0%", scale: 1, zIndex: 5, opacity: 1 },
+    right1: { x: "50%", scale: 0.7, zIndex: 2, opacity: 0.8 },
+    right: { x: "90%", scale: 0.5, zIndex: 1, opacity: 0.5 },
   };
 
   // Animation For Mobile Screen
@@ -219,22 +222,16 @@ export default function OurTeam() {
                 </motion.div>
               </AnimatePresence>
             ) : (
-              // More 1 Card in Desktop Screen
-              teamData.slice(0, 5).map((member, index) => (
+              // All cards in Desktop Screen
+              teamData.map((member, index) => (
                 <motion.div
-                  key={member.id}
+                  key={member.id || index}
                   className="absolute w-[400px] h-[500px] bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_#1a92ce] transition-all duration-300 cursor-pointer"
-                  initial="center"
-                  animate={positions[positionIndexes[index]]}
+                  initial={getCardPosition(index)}
+                  animate={getCardPosition(index)}
                   variants={cardVariants}
                   transition={{ duration: 0.5 }}
-                  onClick={() => {
-                    if (positions[positionIndexes[index]] === "center") {
-                      setActiveOverlayIndex(
-                        activeOverlayIndex === index ? null : index
-                      );
-                    }
-                  }}
+                  onClick={() => handleCardClick(index)}
                 >
                   <img
                     src={member.image}
@@ -246,7 +243,7 @@ export default function OurTeam() {
                     <p className="text-gray-600 font-normal">
                       {member.position}
                     </p>
-                    {positions[positionIndexes[index]] === "center" && (
+                    {getCardPosition(index) === "center" && (
                       <>
                         <motion.div
                           animate={{ y: [0, 5, 0] }}
