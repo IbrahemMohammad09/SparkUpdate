@@ -50,18 +50,16 @@ export default function OurTeam() {
     const diff = (index - currentIndex + teamData.length) % teamData.length;
 
     if (diff === 0) return "center";
-    if (diff === 1 || diff === teamData.length - 3) return "right1";
-    if (diff === 2 || diff === teamData.length - 2) return "right";
-    if (diff === teamData.length - 1 || diff === 3) return "left1";
-    return "left";
+    if (diff === 1) return "right";
+    if (diff === teamData.length - 1) return "left";
+    return "hidden"; // إخفاء الكروت الأخرى
   };
 
   const cardVariants = {
-    left: { x: "-90%", scale: 0.5, zIndex: 1, opacity: 0.5 },
-    left1: { x: "-50%", scale: 0.7, zIndex: 2, opacity: 0.8 },
+    left: { x: "-80%", scale: 0.8, zIndex: 2, opacity: 0.8 },
     center: { x: "0%", scale: 1, zIndex: 5, opacity: 1 },
-    right1: { x: "50%", scale: 0.7, zIndex: 2, opacity: 0.8 },
-    right: { x: "90%", scale: 0.5, zIndex: 1, opacity: 0.5 },
+    right: { x: "80%", scale: 0.8, zIndex: 2, opacity: 0.8 },
+    hidden: { opacity: 0, scale: 0, zIndex: 0, pointerEvents: "none" },
   };
 
   // Animation For Mobile Screen
@@ -222,82 +220,89 @@ export default function OurTeam() {
                 </motion.div>
               </AnimatePresence>
             ) : (
-              // All cards in Desktop Screen
-              teamData.map((member, index) => (
-                <motion.div
-                  key={member.id || index}
-                  className="absolute w-[400px] h-[500px] bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_#1a92ce] transition-all duration-300 cursor-pointer"
-                  initial={getCardPosition(index)}
-                  animate={getCardPosition(index)}
-                  variants={cardVariants}
-                  transition={{ duration: 0.5 }}
-                  onClick={() => handleCardClick(index)}
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-3/5 object-cover"
-                  />
-                  <div className="p-4 text-center">
-                    <h3 className="text-xl font-normal">{member.name}</h3>
-                    <p className="text-gray-600 font-normal">
-                      {member.position}
-                    </p>
-                    {getCardPosition(index) === "center" && (
-                      <>
+              // عرض 3 كروت فقط في الشاشات الكبيرة
+              teamData.map((member, index) => {
+                const position = getCardPosition(index);
+
+                // إظهار الكروت الثلاثة فقط وإخفاء الباقي
+                if (position === "hidden") return null;
+
+                return (
+                  <motion.div
+                    key={member.id || index}
+                    className="absolute w-[400px] h-[500px] bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_#1a92ce] transition-all duration-300 cursor-pointer"
+                    initial={position}
+                    animate={position}
+                    variants={cardVariants}
+                    transition={{ duration: 0.5 }}
+                    onClick={() => handleCardClick(index)}
+                  >
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-3/5 object-cover"
+                    />
+                    <div className="p-4 text-center">
+                      <h3 className="text-xl font-normal">{member.name}</h3>
+                      <p className="text-gray-600 font-normal">
+                        {member.position}
+                      </p>
+                      {position === "center" && (
+                        <>
+                          <motion.div
+                            animate={{ y: [0, 5, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.2 }}
+                            className="text-xl mt-4"
+                          >
+                            <FaChevronDown className="mx-auto text-gray-500" />
+                          </motion.div>
+                          <p className="text-[#1a92ce] mt-2">Click me</p>
+                        </>
+                      )}
+                    </div>
+
+                    <AnimatePresence>
+                      {activeOverlayIndex === index && (
                         <motion.div
-                          animate={{ y: [0, 5, 0] }}
-                          transition={{ repeat: Infinity, duration: 1.2 }}
-                          className="text-xl mt-4"
+                          initial={{ y: "100%", opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={{ y: "100%", opacity: 0 }}
+                          transition={{ duration: 0.6 }}
+                          className="absolute bottom-0 left-0 w-full h-full bg-white/80 backdrop-blur-md text-black flex flex-col justify-center items-center p-6 z-20"
                         >
-                          <FaChevronDown className="mx-auto text-gray-500" />
+                          <motion.div
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 0.5 }}
+                            className="w-3/4 h-0.5 bg-[#1a92ce] mb-4 origin-left"
+                          ></motion.div>
+
+                          <div className="text-center text-lg font-normal max-w-xs">
+                            {member.bio.split(" ").map((word, wordIndex) => (
+                              <motion.span
+                                key={wordIndex}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.15 * wordIndex }}
+                                className="inline-block mr-1"
+                              >
+                                {word}
+                              </motion.span>
+                            ))}
+                          </div>
+
+                          <motion.div
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className="w-3/4 h-0.5 bg-[#1a92ce] mt-4 origin-right"
+                          ></motion.div>
                         </motion.div>
-                        <p className="text-[#1a92ce] mt-2">Click me</p>
-                      </>
-                    )}
-                  </div>
-
-                  <AnimatePresence>
-                    {activeOverlayIndex === index && (
-                      <motion.div
-                        initial={{ y: "100%", opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: "100%", opacity: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="absolute bottom-0 left-0 w-full h-full bg-white/80 backdrop-blur-md text-black flex flex-col justify-center items-center p-6 z-20"
-                      >
-                        <motion.div
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ duration: 0.5 }}
-                          className="w-3/4 h-0.5 bg-[#1a92ce] mb-4 origin-left"
-                        ></motion.div>
-
-                        <div className="text-center text-lg font-normal max-w-xs">
-                          {member.bio.split(" ").map((word, wordIndex) => (
-                            <motion.span
-                              key={wordIndex}
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{ delay: 0.15 * wordIndex }}
-                              className="inline-block mr-1"
-                            >
-                              {word}
-                            </motion.span>
-                          ))}
-                        </div>
-
-                        <motion.div
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ duration: 0.5, delay: 0.4 }}
-                          className="w-3/4 h-0.5 bg-[#1a92ce] mt-4 origin-right"
-                        ></motion.div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })
             )}
           </div>
 
