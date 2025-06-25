@@ -58,7 +58,7 @@ export default function AboutUs() {
             <Link to="https://www.instagram.com/spark.eng.company">
               <AiFillInstagram className="text-4xl transition-transform duration-300 hover:scale-110" />
             </Link>
-            <Link to="https://wa.me/+963962272881">
+            <Link to="https://wa.me/963981999780">
               <IoLogoWhatsapp className="text-4xl transition-transform duration-300 hover:scale-110" />
             </Link>
             <Link to="https://www.linkedin.com/company/spark-engineering-company/">

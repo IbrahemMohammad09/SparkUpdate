@@ -1,13 +1,19 @@
 import MainTitle from "../Components/MainTitle";
 import projects from "../Utils/ProjectsData";
-import { FaArrowRight } from "react-icons/fa";
+// import { FaArrowRight } from "react-icons/fa";
+import { FiArrowRight, FiSmartphone, FiGlobe } from "react-icons/fi";
 import Footer from "../Components/Footer";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import NavigationBar from "../Components/NavigationBar";
 
+
+
 export default function OurProjects() {
   MainTitle(" | Our Projects");
+
+  const primaryColor = "#1a92ce";
+  const primaryHover = "#1476a3";
   return (
     <>
       <NavigationBar />
@@ -30,74 +36,87 @@ export default function OurProjects() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-0">
-            {projects.map(
-              ({ id, title, description, imageUrl, projectUrl }, index) => (
-                <motion.div
-                  key={id}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.15,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 10,
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -10 }}
+              className="bg-gray-50 rounded-xl p-8 cursor-pointer group transition-all duration-300 hover:shadow-[0_10px_40px_-15px_rgba(26,146,206,0.3)] relative"
+              style={{
+                boxShadow: `0 4px 6px -1px ${primaryColor}10`,
+                border: `1px solid ${primaryColor}10`,
+              }}
+            >
+              <div className="relative h-80 rounded-lg overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                  
+                  style={{
+                    // minWidth: "100%",
+                    // minHeight: "100%",
+                    // objectFit: "contain",
                   }}
-                  className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-out"
-                >
-                  <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-[#2fb0cd] rounded-tr-2xl z-10"></div>
+                />
+              </div>
 
-                  <div className="relative h-64 w-full overflow-hidden">
-                    <img
-                      src={imageUrl}
-                      alt={title}
-                      className="w-full h-full object-scale-down"
+              <div className="mt-6">
+                <h3 className="text-xl font-bold text-gray-800">
+                  {project.title}
+                </h3>
+
+                <div
+                  className="px-3 py-1 rounded-full text-sm inline-flex items-center mt-2"
+                  style={{
+                    background: `${primaryColor}15`,
+                    color: primaryColor,
+                    backdropFilter: "blur(4px)",
+                  }}
+                >
+                  {project.type === "Mobile" ? (
+                    <FiSmartphone className="mr-2" />
+                  ) : (
+                    <FiGlobe className="mr-2" />
+                  )}
+                  {project.type} Application
+                </div>
+
+                <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="mt-4 relative h-[2px] bg-gray-200">
+                  <div className="absolute bottom-0 left-0 w-0 h-full bg-[#1a92ce] transition-all duration-500 group-hover:w-full" />
+                </div>
+
+                <div className="mt-6 flex justify-end">
+                  <button
+                    className="flex items-center px-4 py-2 rounded-full transition-all relative overflow-hidden border-2 group/button cursor-pointer"
+                    style={{
+                      borderColor: primaryColor,
+                      color: primaryColor,
+                    }}
+                  >
+                    <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
+                      View Details
+                    </span>
+
+                    <FiArrowRight className="ml-2 transition-transform group-hover/button:translate-x-1 relative z-10 group-hover/button:text-white" />
+
+                    <div
+                      className="absolute inset-0 bg-[#1a92ce]  opacity-0 transition-all duration-300 w-0 group-hover/button:w-full group-hover/button:opacity-100"
                       style={{
-                        minWidth: "100%",
-                        minHeight: "100%",
-                        objectFit: "contain",
+                        background: `linear-gradient(to right, ${primaryColor} 50%, ${primaryHover} 100%)`,
                       }}
                     />
-                  </div>
-
-                  <div className="p-6 flex flex-col h-[calc(100%-16rem)]">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-[#2fb0cd]">
-                      {title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
-                      {description}
-                    </p>
-                    <div className="mt-auto">
-                      <Link
-                        to={projectUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-full text-white font-medium bg-gradient-to-r from-[#2fb0cd] to-[#17899a] shadow-md hover:shadow-lg transition-all duration-300 group-hover:from-[#17899a] group-hover:to-[#2fb0cd]"
-                      >
-                        <span>View Project</span>
-                        <motion.span
-                          initial={{ x: 0 }}
-                          whileHover={{ x: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <FaArrowRight className="w-3.5 h-3.5" />
-                        </motion.span>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <motion.div
-                    className="absolute -bottom-8 -right-8 w-32 h-32 bg-[#2fb0cd]/10 rotate-45"
-                    whileHover={{
-                      rotate: 50,
-                      backgroundColor: "rgba(47, 176, 205, 0.15)",
-                      transition: { duration: 0.5 },
-                    }}
-                  />
-                </motion.div>
-              )
-            )}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
           </div>
         </div>
         <Footer />

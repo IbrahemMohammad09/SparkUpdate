@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiGlobe, FiUsers, FiCode, FiCpu } from "react-icons/fi";
+import { CgWebsite } from "react-icons/cg";
+import { CiMobile1 } from "react-icons/ci";
+import { SiCoinmarketcap } from "react-icons/si";
+import { PiGraphicsCardBold } from "react-icons/pi";
+import { FaWordpress , FaShopify  } from "react-icons/fa";
+
 import { services } from "../Utils/ServicesData";
 import Navbar from "../Components/NavigationBar";
 import Footer from "../Components/Footer";
@@ -87,15 +93,27 @@ const OurServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => {
                 let Icon;
-                if (service.title.includes("Company")) {
-                  Icon = FiGlobe;
-                } else if (service.title.includes("Student")) {
-                  Icon = FiUsers;
-                } else if (service.title.includes("Codes")) {
-                  Icon = FiCode;
+                if (service.title.includes("Web")) {
+                  Icon = CgWebsite;
+                } else if (service.title.includes("Mobile")) {
+                  Icon = CiMobile1;
+                } else if (service.title.includes("Marketing")) {
+                  Icon = SiCoinmarketcap;
                 } else if (service.title.includes("SCRS")) {
                   Icon = FiCpu;
-                } else {
+                } else if (service.title.includes("Graphic")) { 
+                  Icon = PiGraphicsCardBold;
+                } 
+                else if (service.title.includes("UI/UX")){
+                  Icon = FiUsers
+                }
+                else if (service.title.includes("WordPress")){
+                  Icon = FaWordpress
+                }
+                else if (service.title.includes("Shopify")){
+                  Icon = FaShopify
+                }
+                else {
                   Icon = FiGlobe;
                 }
 

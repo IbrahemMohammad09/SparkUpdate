@@ -67,14 +67,14 @@ const ContactUs = () => {
           </motion.div>
 
           <motion.a
-            href="mailto:Spark.contact.it@gmail.com"
+            href="mailto:info@sparkengdev.com"
             className="flex items-center justify-center w-3/4 px-8 py-4 bg-gradient-to-r from-[#1a92ce] to-[#176fa6] text-white rounded-full shadow-lg transform transition-transform hover:scale-110 hover:shadow-2xl hover:from-[#3ba8e0] hover:to-[#2f8ac3]"
             whileHover={{ scale: 1.05 }}
           >
             <FiMail className="mr-2 text-xl" /> Email Us
           </motion.a>
           <motion.a
-            href="tel:+963962272881"
+            href="https://wa.me/963981999780"
             className="flex items-center justify-center w-3/4 px-8 py-4 bg-gradient-to-r from-[#1a92ce] to-[#176fa6] text-white rounded-full shadow-lg transform transition-transform hover:scale-110 hover:shadow-2xl hover:from-[#3ba8e0] hover:to-[#2f8ac3]"
             whileHover={{ scale: 1.05 }}
           >

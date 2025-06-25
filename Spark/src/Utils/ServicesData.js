@@ -1,6 +1,15 @@
-import company_services from "../assets/image/OurServices/Company_services.webp";
-import student_services from "../assets/image/OurServices/student_services.webp";
-import free_code from "../assets/image/OurServices/free_code.jpg";
+import webDevel from '../assets/image/OurServices/web-developmant.jpg'
+import appDevel from '../assets/image/OurServices/app-development.jpg'
+import digitalMarketing from '../assets/image/OurServices/digital-marketing.jpg'
+import graphicDesign from '../assets/image/OurServices/graphic designer.webp'
+import UIUX from '../assets/image/OurServices/UIUX.png'
+import wordPress from '../assets/image/OurServices/wordpress.jpg'
+import SEO from '../assets/image/OurServices/SEO.jpg'
+import shopify from '../assets/image/OurServices/shopify.jpg'
+
+// import company_services from "../assets/image/OurServices/Company_services.webp";
+// import student_services from "../assets/image/OurServices/student_services.webp";
+// import free_code from "../assets/image/OurServices/free_code.jpg";
 import SCRS from "../assets/image/OurServices/SCRS.jpg";
 export const services = [
   {
@@ -8,7 +17,7 @@ export const services = [
     title: "Web Development",
     description:
       "Because the website is considered the digital interface of your business, we provide you with a high-quality website design service. We guarantee a distinctive, attractive and user-friendly design that suits your business and enhances your brand identity. With high responsiveness to all devices and screens, we work to optimize your site to obtain the best ranking in search results.",
-    image: company_services,
+    image: webDevel,
     buttonText: "Book Now",
   },
   {
@@ -16,7 +25,7 @@ export const services = [
     title: "Mobile Apps Development",
     description:
       "Because of the importance of mobile applications in today's business world, we provide premium mobile application design services to help businesses reach their target audience more effectively. With a wonderful user experience, innovative designs, application integration with all systems, and continuous technical support.",
-    image: student_services,
+    image: appDevel,
     buttonText: "Book Now",
   },
   {
@@ -24,7 +33,7 @@ export const services = [
     title: "Digital Marketing",
     description:
       "Believing in its importance, we provide comprehensive e-marketing services that help companies increase their presence on the Internet and attract more customers. Through marketing through social media platforms, SEO, and web analytics, we provide you with integrated services that achieve your aspirations.",
-    image: free_code,
+    image: digitalMarketing,
     buttonText: "Book Now",
   },
   {
@@ -37,36 +46,42 @@ export const services = [
   },
   {
     id: 5,
-    title: "Interior Design",
+    title: "Graphic Design",
     description:
-      "Decoration design, furniture design and interior design are services we provide to help companies and individuals transform their spaces into attractive and functional environments that reflect their own taste and style.",
-    image: SCRS,
+      "Visual identity design services that help companies enhance their presence in the market and attract more customers. It includes logo design, color design, fonts, and advertising materials.",
+    image: graphicDesign,
     buttonText: "Book Now",
   },
   {
     id: 6,
-    title: "Graphic Design",
+    title: "UI/UX Design",
     description:
-      "Visual identity design services that help companies enhance their presence in the market and attract more customers. It includes logo design, color design, fonts, and advertising materials.",
-    image: SCRS,
+      "Designing attractive and interactive user interfaces, a service that provides you with everything you need to achieve your vision. Whether the application is on a mobile phone, an online store, or your company’s website, we offer you a unique and smooth experience for your system interfaces to work perfectly on all devices.",
+    image: UIUX,
     buttonText: "Book Now",
   },
   {
     id: 7,
-    title: "Exterior Design",
+    title: "WordPress",
     description:
-      "Because we believe that the first impression lasts. We provide distinguished exterior design services for buildings, homes, offices, stores and other various places. We combine innovation and creativity to create new and modern concepts that serve our customers and meet their needs.",
-    image: SCRS,
+      "We specialize in creating powerful, custom WordPress websites tailored to your business needs. Whether you need a corporate site, a personal blog, or a full-featured eCommerce platform, our team builds responsive, and secure WordPress solutions that combine design elegance with optimal performance.",
+    image: wordPress,
     buttonText: "Book Now",
   },
   {
     id: 8,
-    title: "Windows Application Development",
+    title: "SEO",
     description:
-      "Distinctive Windows application design services that meet diverse business needs. With continuous support and superior design by a dedicated team. Our designers and developers create unique Windows applications that provide an outstanding user experience and enhance productivity.",
-    image: SCRS,
+      "Boost your online visibility and drive targeted traffic to your website with our comprehensive SEO services. From keyword research and on-page optimization to backlink building and technical audits, we implement data-driven strategies that improve your rankings on Google and other search engines—helping your business grow organically.",
+    image: SEO,
     buttonText: "Book Now",
   },
-
-
+  {
+    id: 9,
+    title: "Shopify Store Services",
+    description:
+      "Launch and manage a high-performing online store with our expert Shopify solutions. We handle everything from custom store setup and theme design to app integration and performance optimization. Whether you're starting from scratch or looking to scale, our Shopify specialists deliver a seamless, user-friendly, and conversion-focused eCommerce experience.",
+    image: shopify,
+    buttonText: "Book Now",
+  },
 ];
