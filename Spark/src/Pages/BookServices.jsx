@@ -35,7 +35,7 @@ if (!service) return <ErrorPage />;
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-64  shadow-md shadow-[#2fb0cd]/40 hover:scale-110 transition-all"
+              className="w-72 h-64 rounded-lg md:w-96 mt-8  shadow-md shadow-[#2fb0cd]/40 hover:scale-105 transition-all"
             />
             <div className="p-8 text-center flex flex-col items-center ">
               <h2 className="text-3xl font-semibold text-[#2fb0cd] mb-4">
