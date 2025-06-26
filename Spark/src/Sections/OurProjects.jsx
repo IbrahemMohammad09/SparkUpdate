@@ -82,7 +82,7 @@ const OurProjects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                  className="w-[420] h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
