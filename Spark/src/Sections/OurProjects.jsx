@@ -1,29 +1,38 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiSmartphone, FiGlobe } from "react-icons/fi";
-import image1 from "../assets/image/OurProjects/1.jpg";
-import image2 from "../assets/image/OurProjects/2.png";
 import bgImage from "../assets/image/OurProjects/Bg.png";
+
+import STEP from "../assets/image/OurProjects/STEP.jpg";
+import SEA from "../assets/image/OurProjects/SEA.jpg";
+import SOE from "../assets/image/OurProjects/SOE.jpg";
+
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 const OurProjects = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
+      id : 1,
+      title: "STEP",
       type: "Web",
-      description: "Modern online shopping solution with AI ",
-      image: image1,
+      description: "Buy and sell properties with confidence. Discover premium real estate opportunities tailored to your needs.",
+      image: STEP,
+      url : "https://Step-syria.com"
     },
     {
-      title: "Fitness App",
-      type: "Mobile",
-      description: "Personalized workout and nutrition tracking application",
-      image: image2,
+      id : 2,
+      title: "SEA DETAILING",
+      type: "Web",
+      description: "Professional cleaning services for cars and home furniture — bringing freshness, shine, and comfort to your everyday life.",
+      image: SEA,
+      url : "https://sea-cardetailing.com"
     },
     {
-      title: "Dashboard Analytics",
+      id : 3,
+      title: "Star Of Elegance",
       type: "Web",
-      description: "Real-time business intelligence dashboard",
-      image: image1,
+      description: "We specialize in innovative, custom furniture design that blends craftsmanship with modern aesthetics. Our mission is to transform ideas into reality, delivering exceptional quality and attention to detail.",
+      image: SOE,
+      url : "https://Starofelegance.com"
     },
   ];
 
@@ -78,11 +87,11 @@ const OurProjects = () => {
                 border: `1px solid ${primaryColor}10`,
               }}
             >
-              <div className="relative h-80 rounded-lg overflow-hidden">
+              <div className="relative  rounded-lg overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-[420] h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                  className="w-full  object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
@@ -123,9 +132,11 @@ const OurProjects = () => {
                       color: primaryColor,
                     }}
                   >
-                    <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
-                      View Details
-                    </span>
+                    <Link to={project.url}>
+                      <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
+                        View Details
+                      </span>
+                    </Link>
 
                     <FiArrowRight className="ml-2 transition-transform group-hover/button:translate-x-1 relative z-10 group-hover/button:text-white" />
 

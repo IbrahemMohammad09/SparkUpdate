@@ -1,37 +1,40 @@
-import img from "../assets/image/OurProjects/1.jpg"
+import PH from "../assets/image/OurProjects/PH.jpg"
+import SEA from "../assets/image/OurProjects/SEA.jpg"
+import SOE from "../assets/image/OurProjects/SOE.jpg"
+import STEP from "../assets/image/OurProjects/STEP.jpg"
 
 const projects= [
     {
-      id: 1,
-      title: "Corporate Landing Page",
-      description: "A sleek, responsive landing page built with React and Tailwind.",
-      image: img,
-      projectUrl: "/",
+      id : 1,
+      title: "STEP",
       type: "Web",
+      description: "Buy and sell properties with confidence. Discover premium real estate opportunities tailored to your needs.",
+      image: STEP,
+      url : "https://Step-syria.com"
     },
     {
-      id: 2,
-      title: "E-Commerce Storefront",
-      description: "Full-featured e-commerce site with cart, checkout, and admin panel.",
-      image:img,
-      projectUrl: "/",
-      type: "Mobile",
-    },
-    {
-      id: 3,
-      title: "Portfolio Showcase",
-      description: "Personal portfolio site showcasing design & development work.",
-      image:img,
-      projectUrl: "/",
-      type: "Mobile",
-    },
-    {
-      id: 4,
-      title: "Web App Dashboard",
-      description: "Interactive dashboard with charts, tables, and real-time data.",
-      image:  img,
-      projectUrl: "/",
+      id : 2,
+      title: "SEA DETAILING",
       type: "Web",
+      description: "Professional cleaning services for cars and home furniture — bringing freshness, shine, and comfort to your everyday life.",
+      image: SEA,
+      url : "https://sea-cardetailing.com"
+    },
+    {
+      id : 3,
+      title: "Star Of Elegance",
+      type: "Web",
+      description: "We specialize in innovative, custom furniture design that blends craftsmanship with modern aesthetics. Our mission is to transform ideas into reality, delivering exceptional quality and attention to detail.",
+      image: SOE,
+      url : "https://Starofelegance.com"
+    },
+    {
+      id : 4,
+      title: "Star Of Elegance",
+      type: "Web",
+      description: "Philipos Center is a licensed Syrian institution (Commercial Registration No. 13062) specializing in human development, training, and capacity building since 2017. With over 50,000 training hours delivered across 281 in-person and online programs, the center offers a wide range of lectures, workshops, and customized courses through its virtual platform.",
+      image: PH,
+      url : "https://philipus-cdt.com"
     },
   ];
   

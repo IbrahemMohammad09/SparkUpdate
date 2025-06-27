@@ -1,11 +1,10 @@
 import MainTitle from "../Components/MainTitle";
 import projects from "../Utils/ProjectsData";
-// import { FaArrowRight } from "react-icons/fa";
 import { FiArrowRight, FiSmartphone, FiGlobe } from "react-icons/fi";
 import Footer from "../Components/Footer";
-// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import NavigationBar from "../Components/NavigationBar";
+import { Link } from "react-router-dom";
 
 
 
@@ -49,11 +48,11 @@ export default function OurProjects() {
                 border: `1px solid ${primaryColor}10`,
               }}
             >
-              <div className="relative h-80 rounded-lg overflow-hidden">
+              <div className="relative rounded-lg overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                  className="w-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   
                   style={{
                     // minWidth: "100%",
@@ -100,9 +99,11 @@ export default function OurProjects() {
                       color: primaryColor,
                     }}
                   >
-                    <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
-                      View Details
-                    </span>
+                    <Link to={project.url}>
+                      <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
+                        View Details
+                      </span>
+                    </Link>
 
                     <FiArrowRight className="ml-2 transition-transform group-hover/button:translate-x-1 relative z-10 group-hover/button:text-white" />
 
