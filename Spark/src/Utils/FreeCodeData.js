@@ -7,14 +7,14 @@ import img6 from '../assets/image/OurFreeCode/17.jpg'
 import img7 from '../assets/image/OurFreeCode/3.jpg'
 import img8 from '../assets/image/OurFreeCode/4.jpg'
 import img9 from '../assets/image/OurFreeCode/13.jpg'
-import img10 from '../assets/image/OurFreeCode/13.jpg'
-import img11 from '../assets/image/OurFreeCode/13.jpg'
-import img12 from '../assets/image/OurFreeCode/13.jpg'
-import img13 from '../assets/image/OurFreeCode/13.jpg'
-import img14 from '../assets/image/OurFreeCode/13.jpg'
-import img15 from '../assets/image/OurFreeCode/13.jpg'
-import img16 from '../assets/image/OurFreeCode/13.jpg'
-import img17 from '../assets/image/OurFreeCode/13.jpg'
+import img10 from '../assets/image/OurFreeCode/5.jpg'
+import img11 from '../assets/image/OurFreeCode/6.jpg'
+import img12 from '../assets/image/OurFreeCode/15.jpg'
+import img13 from '../assets/image/OurFreeCode/12.jpg'
+import img14 from '../assets/image/OurFreeCode/8.jpg'
+import img15 from '../assets/image/OurFreeCode/2.jpg'
+import img16 from '../assets/image/OurFreeCode/1.jpg'
+import img17 from '../assets/image/OurFreeCode/11.jpg'
 
 const freeCodeData = [
   {
@@ -88,6 +88,70 @@ const freeCodeData = [
       "This code creates an interactive particle animation effect on a canvas element. It uses HTML, CSS, and JavaScript to display dynamic, colorful particles that respond to user input. The particles form a grid and react to mouse movement or touch, creating a fluid, visually striking experience.",
     imageUrl: img9,
     link: "https://drive.google.com/file/d/18M4nMhkbaN8oxR9acNfa1wu4VddR7Rbm/view?usp=sharing",
+  },
+  {
+    id: 10,
+    title: "Interactive Image Carousel with Content Preview",
+    description:
+      "Explore a responsive and visually stunning image carousel showcasing captivating content snippets. Smooth navigation, modern animations, and adaptable layouts ensure a seamless user experience across devices.",
+    imageUrl: img10,
+    link: "https://drive.google.com/file/d/1J9TvX5MPPISQPuKhKJo9IFvLMyRwk95o/view?usp=sharing",
+  },
+  {
+    id: 11,
+    title: "Interactive Gradient with Dynamic Noise Effect",
+    description:
+      "This code creates a visually engaging web page featuring a central interactive card and a dynamic gradient background with animated and interactive effects.",
+    imageUrl: img11,
+    link: "https://drive.google.com/file/d/1NPKjndH-A_iozel-uBCDE4G06kbYISbN/view?usp=sharing",
+  },
+  {
+    id: 12,
+    title: "Animated Gradient Background with Centered Text and 3D Effects",
+    description:
+      "This code creates a full-screen webpage with a dynamic radial gradient background, 3D layered effects, centered content using Flexbox, animated keyframe transitions",
+    imageUrl: img12,
+    link: "https://drive.google.com/file/d/1CpaBSU9llgJ-KycqxO7xBC5Ng9r7QpIV/view?usp=sharing",
+  },
+  {
+    id: 13,
+    title: "Glass Morphism Social Media Icons with Hover Animation",
+    description:
+      "This code creates a visually appealing collection of social media icons using the popular Glass Morphism design trend. Each icon is styled with a frosted-glass effect, incorporating a gradient background and subtle blurs. The hover interaction adds dynamic feedback by smoothly lifting the icons and animating a light reflection across them.",
+    imageUrl: img13,
+    link: "https://drive.google.com/file/d/1savQ_jLauokpwRQ3vFRr2sFlnS-UwTWU/view?usp=sharing",
+  },
+  {
+    id: 14,
+    title: "Parallax Flipping Card UI with Hover Effects",
+    description:
+      "This code showcases an engaging Parallax Flipping Cards interface that combines 3D transformations with a dynamic hover effect. Each card flips seamlessly to reveal its back side, presenting additional content. The visually stunning design uses vibrant background images and gradients to enhance the user experience, making it ideal for portfolios, galleries, or feature presentations.",
+    imageUrl: img14,
+    link: "https://drive.google.com/file/d/1D9HCg-3Hjrr_k-c7boCELf_fuxQTR70i/view?usp=sharing",
+  },
+  {
+    id: 15,
+    title: "3D Rotating Carousel with Interactive Architecture Gallery",
+    description:
+      "This project implements an engaging 3D carousel to showcase architecture photography. The carousel offers a smooth, interactive rotation effect with user controls for direction, dynamic hover animations, and grayscale-to-color transitions on focus. The design is highly responsive, adapting seamlessly to different screen sizes while maintaining an immersive visual experience.",
+    imageUrl: img15,
+    link: "https://drive.google.com/file/d/14eh0hjAsFP2KJUcZLLFlMYT2TNuDf9Ok/view?usp=sharing",
+  },
+  {
+    id: 16,
+    title: "Interactive 3D Spheres Animation",
+    description:
+      "This project features a visually stunning 3D animation of interactive spheres using Three.js for rendering and GSAP for animations. It combines modern web technologies to create an immersive and dynamic experience.",
+    imageUrl: img16,
+    link: "https://drive.google.com/file/d/1YP-3H9DjfJta5POVBuxCvjuPR1KMu4Hr/view?usp=sharing",
+  },
+  {
+    id: 17,
+    title: "Festive Animated Christmas Tree",
+    description:
+      "This code creates a dynamic and festive Christmas tree animation using SVG and CSS. The design incorporates intricate details like glowing gradients, particle shapes (stars, hearts, crosses, and circles), and creative masking for tree paths, bottom decorations, and a pot. Filters and radial gradients enhance the glowing and shimmering effects, making the tree come alive with vibrant holiday cheer.",
+    imageUrl: img17,
+    link: "https://drive.google.com/file/d/15R-er5RR-qqinbXBpmM8nsh_l48H2bO7/view?usp=sharing",
   },
 ];
 
