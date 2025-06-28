@@ -25,7 +25,7 @@ const teamData = [
   //   name: "Rama Salouh",
   //   position: "PROJECT MANAGER",
   //   image: img2,
-  //   bio: "Alaa Ghareeb is the visionary Head of the Marketing Team at Spark Engineering Company, leading strategic marketing initiatives with creativity and a deep understanding of market dynamics.",
+  //   bio: "",
   // },
   {
     id : 3,
