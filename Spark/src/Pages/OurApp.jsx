@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AiFillApple, AiFillAndroid } from "react-icons/ai";
-import image2 from "../assets/image/OurApp/2.svg";
+import image2 from "../assets/image/OurApp/11.png";
 // import image2 from "../assets/image/OurApp/2.jpg";
 import MainTitle from "../Components/MainTitle";
 import { div } from "framer-motion/client";
