@@ -92,7 +92,7 @@ export default function OurFreeCode() {
                   border: "2px solid transparent",
                 }}
               >
-                <div className="relative pt-[75%] overflow-hidden mx-3 mt-3 rounded-xl">
+                <div className="relative pt-[100%] overflow-hidden mx-3 mt-3 rounded-xl">
                   <motion.img
                     src={item.imageUrl}
                     alt={item.title}
