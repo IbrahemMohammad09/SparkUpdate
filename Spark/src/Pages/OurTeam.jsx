@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import teamData from "../Utils/TeamData";
 import Team_bg from "../assets/image/OurTeam/team-bg.png";
+import bgCard from "../assets/image/OurTeam/bgCard.png";
 import MainTitle from "../Components/MainTitle";
 import Footer from "../Components/Footer";
 import NavigationBar from "../Components/NavigationBar";
@@ -115,13 +116,13 @@ export default function OurTeam() {
         <div className="z-10 flex lg:hidden items-center gap-8 mt-10 mb-4">
           <button
             onClick={handlePrev}
-            className="text-2xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_10px_#1a92ce]"
+            className="text-2xl transition duration-300 hover:text-[#1a92ce]"
           >
             <FaArrowLeft />
           </button>
           <button
             onClick={handleNext}
-            className="text-2xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_10px_#1a92ce]"
+            className="text-2xl transition duration-300 hover:text-[#1a92ce]"
           >
             <FaArrowRight />
           </button>
@@ -130,12 +131,12 @@ export default function OurTeam() {
         <div className="z-10 flex items-center gap-4 mt-4 lg:mt-12 px-4 w-full justify-center">
           <button
             onClick={handlePrev}
-            className="hidden lg:block text-3xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_15px_#1a92ce]"
+            className="hidden lg:block text-3xl transition duration-300 hover:text-[#1a92ce]"
           >
             <FaArrowLeft />
           </button>
 
-          <div className="relative w-full max-w-6xl h-[500px] flex justify-center items-center">
+          <div className="relative w-full max-w-6xl h-[600px] flex justify-center items-center">
             {isMobile ? (
               // 1 Card In Mobile Screen
               <AnimatePresence custom={direction} mode="wait">
@@ -147,19 +148,25 @@ export default function OurTeam() {
                   animate="center"
                   exit="exit"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  className="absolute w-[300px] h-[500px] bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_#1a92ce] transition-all duration-300 cursor-pointer"
+                  className="absolute w-[300px] h-[500px] bg-white text-black rounded-2xl overflow-hidden cursor-pointer flex flex-col"
                   onClick={() =>
                     setActiveOverlayIndex(
                       activeOverlayIndex === currentIndex ? null : currentIndex
                     )
                   }
                 >
-                  <img
-                    src={teamData[currentIndex].image}
-                    alt={teamData[currentIndex].name}
-                    className="w-full h-3/5 object-cover"
-                  />
-                  <div className="p-4 text-center">
+                  {/* إضافة خلفية للصورة */}
+                  <div
+                    className="w-full h-[65%] bg-cover bg-center"
+                    style={{ backgroundImage: `url(${bgCard})` }}
+                  >
+                    <img
+                      src={teamData[currentIndex].image}
+                      alt={teamData[currentIndex].name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4 text-center mt-auto">
                     <h3 className="text-xl font-normal">
                       {teamData[currentIndex].name}
                     </h3>
@@ -230,19 +237,25 @@ export default function OurTeam() {
                 return (
                   <motion.div
                     key={member.id || index}
-                    className="absolute w-[400px] h-[500px] bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_#1a92ce] transition-all duration-300 cursor-pointer"
+                    className="absolute w-[400px] h-[550px] bg-white text-black rounded-2xl overflow-hidden cursor-pointer flex flex-col"
                     initial={position}
                     animate={position}
                     variants={cardVariants}
                     transition={{ duration: 0.5 }}
                     onClick={() => handleCardClick(index)}
                   >
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-3/5 object-cover"
-                    />
-                    <div className="p-4 text-center">
+                    {/* إضافة خلفية للصورة */}
+                    <div
+                      className="w-full h-[65%] bg-cover bg-center"
+                      style={{ backgroundImage: `url(${bgCard})` }}
+                    >
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4 text-center mt-auto">
                       <h3 className="text-xl font-normal">{member.name}</h3>
                       <p className="text-gray-600 font-normal">
                         {member.position}
@@ -308,7 +321,7 @@ export default function OurTeam() {
 
           <button
             onClick={handleNext}
-            className="hidden lg:block text-3xl transition duration-300 hover:text-[#1a92ce] hover:shadow-[0_0_15px_#1a92ce]"
+            className="hidden lg:block text-3xl transition duration-300 hover:text-[#1a92ce]"
           >
             <FaArrowRight />
           </button>
