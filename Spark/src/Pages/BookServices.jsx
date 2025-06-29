@@ -7,13 +7,34 @@ import Footer from "../Components/Footer";
 import MainTitle from "../Components/MainTitle";
 import NavigationBar from "../Components/NavigationBar";
 import { MdEmail } from "react-icons/md";
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
+
 export default function BookServices() {
   MainTitle(" | Book Service");
   const { id } = useParams();
-const location = useLocation();
-const service = services.find((s) => s.id.toString() === id);
-const serviceName = location.state?.serviceName || service?.title;
-if (!service) return <ErrorPage />;
+  const location = useLocation();
+  const service = services.find((s) => s.id.toString() === id);
+  const serviceName = location.state?.serviceName || service?.title;
+  if (!service) return <ErrorPage />;
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    emailjs.sendForm('service_l3b71bj','template_pmdrrlm',form.current,'fojdkdxGgdOcDioYp').then(
+      (result) => {
+        // console.log(result.text);
+        alert("تم إرسال طلبك بنجاح!");
+        form.current.reset();
+      },
+      (error) => {
+        console.log(error.text);
+        alert("حدث خطأ أثناء إرسال الطلب.");
+      }
+    );
+  }
 
   return (
     <div>
@@ -53,11 +74,13 @@ if (!service) return <ErrorPage />;
             <h3 className="text-3xl font-semibold text-[#2fb0cd] mb-8 text-center">
               Book This Service
             </h3>
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="relative w-full">
                   <IoPerson className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2fb0cd]" />
                   <input
+                    required
+                    name="name"
                     type="text"
                     placeholder="Your Name"
                     className="text-sm w-full pl-12 pr-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2fb0cd]"
@@ -67,6 +90,7 @@ if (!service) return <ErrorPage />;
                   <MdEmail className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2fb0cd]" />
                   <input
                     type="email"
+                    name="e-mail"
                     placeholder="Your Email"
                     className="text-sm w-full pl-12 pr-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2fb0cd]"
                   />
@@ -75,7 +99,9 @@ if (!service) return <ErrorPage />;
               <div className="relative w-full">
                 <IoCall className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2fb0cd]" />
                 <input
+                  required
                   type="text"
+                  name="phone"
                   placeholder="Your Phone Number"
                   className= "text-sm w-full pl-12 pr-4 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2fb0cd]"
                 />
@@ -87,6 +113,8 @@ if (!service) return <ErrorPage />;
                 <IoChatbubbleEllipses className="absolute left-4 top-11 text-[#2fb0cd]" />
                 <textarea
                  defaultValue={`I wanna book this service " ${serviceName} "`}
+                 required
+                 name="service"
                   className="text-sm w-full pl-12  pr-4 py-3 h-28 bg-gray-100 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2fb0cd]"
                 />
               </div>
