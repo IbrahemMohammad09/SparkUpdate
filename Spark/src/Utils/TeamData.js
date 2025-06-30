@@ -1,4 +1,4 @@
-import img1 from "../assets/image/OurTeam/1.png"
+import img1 from "../assets/image/OurTeam/Untitled-52.jpg"
 import img2 from "../assets/image/OurTeam/2.png"
 import img3 from "../assets/image/OurTeam/3.png"
 import img4 from "../assets/image/OurTeam/4.png"

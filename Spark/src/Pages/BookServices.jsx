@@ -9,6 +9,7 @@ import NavigationBar from "../Components/NavigationBar";
 import { MdEmail } from "react-icons/md";
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
+import { useNavigate } from "react-router-dom";
 
 export default function BookServices() {
   MainTitle(" | Book Service");
@@ -19,6 +20,7 @@ export default function BookServices() {
   if (!service) return <ErrorPage />;
 
   const form = useRef();
+  const navigate = useNavigate();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -26,12 +28,13 @@ export default function BookServices() {
     emailjs.sendForm('service_l3b71bj','template_pmdrrlm',form.current,'fojdkdxGgdOcDioYp').then(
       (result) => {
         // console.log(result.text);
-        alert("تم إرسال طلبك بنجاح!");
+        // alert("تم إرسال طلبك بنجاح!");
         form.current.reset();
+        navigate("/rquest-success");
       },
       (error) => {
         console.log(error.text);
-        alert("حدث خطأ أثناء إرسال الطلب.");
+        alert("OPPS there is an error");
       }
     );
   }

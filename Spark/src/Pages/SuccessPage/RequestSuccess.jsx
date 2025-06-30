@@ -4,14 +4,25 @@ import { motion } from 'framer-motion';
 import NavigationBar from "../../Components/NavigationBar";
 import Footer from "../../Components/Footer";
 import MainTitle from "../../Components/MainTitle";
+import { useNavigate } from "react-router-dom";
 
 export default function RequestSuccess() {
+
   MainTitle (" | Rquest Success")
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setShow(true);
   }, []);
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      navigate("/our_services");
+    },3000)
+
+    return () => clearTimeout(timer);
+  },[navigate])
 
   return (
     <>
