@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone } from "react-icons/fi";
 import HeroSection from "../assets/image/ContactUs/ContactUs Photo.png";
-import { div } from "framer-motion/client";
 import MainTitle from "../Components/MainTitle";
 import Footer from "../Components/Footer";
 import NavigationBar from "../Components/NavigationBar";

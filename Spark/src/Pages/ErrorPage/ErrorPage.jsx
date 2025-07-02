@@ -1,4 +1,3 @@
-// App.jsx
 import { useState, useEffect } from "react";
 import "./ErrorPage.css";
 import { Link } from "react-router-dom";
