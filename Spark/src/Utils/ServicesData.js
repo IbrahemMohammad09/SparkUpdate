@@ -7,9 +7,7 @@ import wordPress from '../assets/image/OurServices/wordpress.jpg'
 import SEO from '../assets/image/OurServices/SEO.jpg'
 import shopify from '../assets/image/OurServices/shopify.jpg'
 
-// import company_services from "../assets/image/OurServices/Company_services.webp";
-// import student_services from "../assets/image/OurServices/student_services.webp";
-// import free_code from "../assets/image/OurServices/free_code.jpg";
+
 import SCRS from "../assets/image/OurServices/SCRS.jpg";
 export const services = [
   {
@@ -40,7 +38,7 @@ export const services = [
     id: 4,
     title: "SCRS",
     description:
-      "Smart Coding & Research Solutions - advanced tech solutions for complex business challenges.",
+      "Our SCRS Restaurant Management System offers a seamless dining experience with a smart digital menu and direct online ordering. Each restaurant receives a custom-branded interface that reflects its unique identity. Orders are efficiently managed through a centralized dashboard with real-time tracking. The system provides insightful analytics on sales and operations. It also supports structured departmental organization for smooth internal workflows.",
     image: SCRS,
     buttonText: "Book Now",
   },
@@ -68,16 +66,16 @@ export const services = [
     image: wordPress,
     buttonText: "Book Now",
   },
+  // {
+  //   id: 8,
+  //   title: "SEO",
+  //   description:
+  //     "Boost your online visibility and drive targeted traffic to your website with our comprehensive SEO services. From keyword research and on-page optimization to backlink building and technical audits, we implement data-driven strategies that improve your rankings on Google and other search engines—helping your business grow organically.",
+  //   image: SEO,
+  //   buttonText: "Book Now",
+  // },
   {
     id: 8,
-    title: "SEO",
-    description:
-      "Boost your online visibility and drive targeted traffic to your website with our comprehensive SEO services. From keyword research and on-page optimization to backlink building and technical audits, we implement data-driven strategies that improve your rankings on Google and other search engines—helping your business grow organically.",
-    image: SEO,
-    buttonText: "Book Now",
-  },
-  {
-    id: 9,
     title: "Shopify Store Services",
     description:
       "Launch and manage a high-performing online store with our expert Shopify solutions. We handle everything from custom store setup and theme design to app integration and performance optimization. Whether you're starting from scratch or looking to scale, our Shopify specialists deliver a seamless, user-friendly, and conversion-focused eCommerce experience.",

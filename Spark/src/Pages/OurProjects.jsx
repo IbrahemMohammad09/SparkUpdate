@@ -101,7 +101,7 @@ export default function OurProjects() {
                   >
                     <Link to={project.url}>
                       <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white">
-                        View Details
+                       Visit the website
                       </span>
                     </Link>
 

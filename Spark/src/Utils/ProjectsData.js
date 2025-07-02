@@ -30,7 +30,7 @@ const projects= [
     },
     {
       id : 4,
-      title: "Star Of Elegance",
+      title: "Philipus",
       type: "Web",
       description: "Philipos Center is a licensed Syrian institution (Commercial Registration No. 13062) specializing in human development, training, and capacity building since 2017. With over 50,000 training hours delivered across 281 in-person and online programs, the center offers a wide range of lectures, workshops, and customized courses through its virtual platform.",
       image: PH,
