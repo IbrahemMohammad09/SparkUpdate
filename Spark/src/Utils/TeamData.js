@@ -46,7 +46,7 @@ const teamData = [
     name: "Yara Jarbouh",
     position: "GRAHPIC DESINER",
     image: img5,
-    bio: "",
+    bio: "Passionate Graphic designer , dedicated to communicate ideas that inspire and captivate consumers through application interfaces, advertisements and carousels. Able to multitask and complete work with accuracy and efficiency while meeting deadlines.",
   },
   {
     id : 6,

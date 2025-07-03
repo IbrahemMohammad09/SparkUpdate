@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { FiArrowRight, FiSmartphone, FiGlobe } from "react-icons/fi";
+import { motion,AnimatePresence } from "framer-motion";
+import { FiArrowRight, FiSmartphone, FiGlobe,FiX } from "react-icons/fi";
 import bgImage from "../assets/image/OurProjects/Bg.png";
 
 import STEP from "../assets/image/OurProjects/STEP.jpg";
@@ -8,7 +8,19 @@ import SOE from "../assets/image/OurProjects/SOE.jpg";
 
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import { useState } from "react";
+
 const OurProjects = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+
   const projects = [
     {
       id : 1,
@@ -87,7 +99,10 @@ const OurProjects = () => {
                 border: `1px solid ${primaryColor}10`,
               }}
             >
-              <div className="relative  rounded-lg overflow-hidden">
+              <div 
+                className="relative  rounded-lg overflow-hidden"
+                onClick={() => handleImageClick(project.image)}
+                >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -168,6 +183,38 @@ const OurProjects = () => {
          </Link>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 bg-opacity-70 backdrop-blur-sm"
+            onClick={closeImageModal}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-2xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeImageModal}
+                className="absolute -top-10 right-0 text-white p-1 rounded-full hover:bg-white hover:bg-opacity-20 transition-colors"
+              >
+                <FiX size={20} />
+              </button>
+              <motion.img
+                src={selectedImage}
+                alt="Enlarged project"
+                className="w-full max-h-[65vh] object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
