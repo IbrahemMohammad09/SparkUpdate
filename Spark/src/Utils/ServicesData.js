@@ -1,14 +1,14 @@
-import webDevel from '../assets/image/OurServices/web-developmant.jpg'
-import appDevel from '../assets/image/OurServices/app-development.jpg'
-import digitalMarketing from '../assets/image/OurServices/digital-marketing.jpg'
+import webDevel from '../assets/image/OurServices/web-developmant.webp'
+import appDevel from '../assets/image/OurServices/app-development.webp'
+import digitalMarketing from '../assets/image/OurServices/digital-marketing.webp'
 import graphicDesign from '../assets/image/OurServices/graphic designer.webp'
-import UIUX from '../assets/image/OurServices/UIUX.png'
-import wordPress from '../assets/image/OurServices/wordpress.jpg'
-import SEO from '../assets/image/OurServices/SEO.jpg'
-import shopify from '../assets/image/OurServices/shopify.jpg'
+import UIUX from '../assets/image/OurServices/UIUX.webp'
+import wordPress from '../assets/image/OurServices/wordpress.webp'
+import SEO from '../assets/image/OurServices/SEO.webp'
+import shopify from '../assets/image/OurServices/shopify.webp'
 
 
-import SCRS from "../assets/image/OurServices/SCRS.jpg";
+import SCRS from "../assets/image/OurServices/SCRS.webp";
 export const services = [
   {
     id: 1,

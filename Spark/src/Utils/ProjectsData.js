@@ -1,7 +1,7 @@
-import PH from "../assets/image/OurProjects/PH.jpg"
-import SEA from "../assets/image/OurProjects/SEA.jpg"
-import SOE from "../assets/image/OurProjects/SOE.jpg"
-import STEP from "../assets/image/OurProjects/STEP.jpg"
+import PH from "../assets/image/OurProjects/PH.webp"
+import SEA from "../assets/image/OurProjects/SEA.webp"
+import SOE from "../assets/image/OurProjects/SOE.webp"
+import STEP from "../assets/image/OurProjects/STEP.webp"
 
 const projects= [
     {

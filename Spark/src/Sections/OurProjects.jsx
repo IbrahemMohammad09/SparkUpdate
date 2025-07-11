@@ -2,9 +2,9 @@ import { motion,AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiSmartphone, FiGlobe,FiX } from "react-icons/fi";
 import bgImage from "../assets/image/OurProjects/Bg.png";
 
-import STEP from "../assets/image/OurProjects/STEP.jpg";
-import SEA from "../assets/image/OurProjects/SEA.jpg";
-import SOE from "../assets/image/OurProjects/SOE.jpg";
+import STEP from "../assets/image/OurProjects/STEP.webp";
+import SEA from "../assets/image/OurProjects/SEA.webp";
+import SOE from "../assets/image/OurProjects/SOE.webp";
 
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";

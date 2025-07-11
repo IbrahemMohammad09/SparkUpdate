@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FaCode, FaPaintBrush, FaMobileAlt, FaChartLine } from "react-icons/fa";
-import img from "../assets/image/OurServices/free_code.jpg";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 const services = [
