@@ -37,7 +37,7 @@ const teamData = [
   {
     id : 4,
     name: "Alissar Deeb",
-    position: "MARKETING TEAM LEAD",
+    position: "CONTENT CREATOR",
     image: img4,
     bio: "Crafts compelling content that connects and inspires. Transforms ideas into powerful visuals and words. Brings creativity and consistency to the brand voice.",
   },
