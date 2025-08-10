@@ -90,13 +90,13 @@ const teamData = [
     image: img11,
     bio: "Creates dynamic user interfaces with precision and flair. Brings designs to life with modern React tools. Focused on performance, accessibility, and experience.",
   },
-  {
-    id : 12,
-    name: "Ibrahem Alhussein",
-    position: "FLUTER DEVELOPER",
-    image: img12,
-    bio: "Builds cross-platform mobile apps with Flutter efficiency. Combines speed, style, and smooth functionality. Delivers intuitive experiences across devices.",
-  },
+  // {
+  //   id : 12,
+  //   name: "Ibrahem Alhussein",
+  //   position: "FLUTER DEVELOPER",
+  //   image: img12,
+  //   bio: "Builds cross-platform mobile apps with Flutter efficiency. Combines speed, style, and smooth functionality. Delivers intuitive experiences across devices.",
+  // },
   {
     id : 13,
     name: "Nael Ghanem",
