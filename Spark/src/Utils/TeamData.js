@@ -29,7 +29,7 @@ const teamData = [
   // },
   {
     id : 3,
-    name: "Alaa Ghareed",
+    name: "Alaa Ghareeb",
     position: "MARKETING TEAM LEAD",
     image: img3,
     bio: "Leads strategic marketing initiatives across all channels. Transforms data into impactful campaigns and results. Focused on brand growth, visibility, and engagement.",
@@ -44,21 +44,21 @@ const teamData = [
   {
     id : 5,
     name: "Yara Jarbouh",
-    position: "GRAHPIC DESINER",
+    position: "GRAHPIC DESIGNER",
     image: img5,
     bio: "Designs impactful visuals that define our brand identity. Blends creativity with purpose in every project. Ensures our designs are both striking and strategic.",
   },
   {
     id : 6,
     name: "Bassel Alashoush",
-    position: "PUBLIC REALTIONS",
+    position: "PUBLIC RELATIONS",
     image: img6,
     bio: "Builds meaningful relationships with clients and partners. Represents the company with confidence and professionalism. Ensures our message resonates beyond the walls.",
   },
   {
     id : 7,
     name: "Ghazal Kiwan",
-    position: "PUBLIC REALTIONS",
+    position: "PUBLIC RELATIONS",
     image: img7,
     bio: "Engages with audiences and strengthens our public image. Coordinates communication strategies with a personal touch. Bridges the gap between the company and the community.",
   },
