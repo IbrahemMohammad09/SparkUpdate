@@ -26,7 +26,7 @@ const projects= [
       type: "Web",
       description: "We specialize in innovative, custom furniture design that blends craftsmanship with modern aesthetics. Our mission is to transform ideas into reality, delivering exceptional quality and attention to detail.",
       image: SOE,
-      url : "https://Starofelegance.com"
+      url : null
     },
     {
       id : 4,

@@ -96,30 +96,36 @@ export default function OurProjects() {
                     <div className="absolute bottom-0 left-0 w-0 h-full bg-[#1a92ce] transition-all duration-500 group-hover:w-full" />
                   </div>
 
-                  <div className="mt-7 flex justify-end">
-                    <button
-                      className="flex items-center px-5 py-3 rounded-full transition-all relative overflow-hidden border-2 group/button cursor-pointer"
-                      style={{
-                        borderColor: primaryColor,
-                        color: primaryColor,
-                      }}
-                    >
-                      <Link to={project.url}>
-                        <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white text-base">
-                          Visit website
-                        </span>
-                      </Link>
-
-                      <FiArrowRight className="ml-3 transition-transform group-hover/button:translate-x-1 relative z-10 group-hover/button:text-white text-base" />
-
-                      <div
-                        className="absolute inset-0 bg-[#1a92ce]  opacity-0 transition-all duration-300 w-0 group-hover/button:w-full group-hover/button:opacity-100"
+                  {project.url === null ? (
+                      <div></div>
+                    ) : (
+                    <div className="mt-7 flex justify-end">
+                      <button
+                        className="flex items-center px-5 py-3 rounded-full transition-all relative overflow-hidden border-2 group/button cursor-pointer"
                         style={{
-                          background: `linear-gradient(to right, ${primaryColor} 50%, ${primaryHover} 100%)`,
+                          borderColor: primaryColor,
+                          color: primaryColor,
                         }}
-                      />
-                    </button>
-                  </div>
+                      >
+                        <Link to={project.url}>
+                          <span className="relative z-10 transition-colors duration-300 group-hover/button:text-white text-base">
+                            Visit website
+                          </span>
+                        </Link>
+
+                        <FiArrowRight className="ml-3 transition-transform group-hover/button:translate-x-1 relative z-10 group-hover/button:text-white text-base" />
+
+                        <div
+                          className="absolute inset-0 bg-[#1a92ce]  opacity-0 transition-all duration-300 w-0 group-hover/button:w-full group-hover/button:opacity-100"
+                          style={{
+                            background: `linear-gradient(to right, ${primaryColor} 50%, ${primaryHover} 100%)`,
+                          }}
+                        />
+                      </button>
+                    </div>
+                  )}
+
+                  
                 </div>
               </motion.div>
             ))}
